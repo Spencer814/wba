@@ -1,83 +1,56 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('WbaCtrl', function($scope) {})
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+.controller('ProgramsCtrl', function($scope, Programs) {
+  $scope.programs = Programs.all();
+  $scope.remove = function(program) {
+    Programs.remove(program);
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('ProgramDetailCtrl', function($scope, $stateParams, Programs) {
+  $scope.program = Programs.get($stateParams.programId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AboutCtrl', function($scope, Persons) {
   $scope.settings = {
     enableFriends: true
+  }
+
+  $scope.persons = Persons.all();
+  $scope.remove = function(person) {
+    Persons.remove(person);
   };
 })
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AboutDetailCtrl', function($scope, $stateParams, Persons) {
+  $scope.person = Persons.get($stateParams.personId);
+})
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
+.controller('ParentsCtrl', function($scope, Events, $ionicPlatform, $cordovaCalendar, $timeout) {
+    
+  $ionicPlatform.ready(function() {
+    Events.get().then(function(events) {
+      $scope.events = events;
+    });
   });
+  
+  $scope.addEvent = function(event, idx) {
+    
+    Events.add(event).then(function(result) {
+      if(result === 1) {
+        //update the event
+        $timeout(function() {
+          $scope.events[idx].status = true;
+          $scope.$apply();
+        });
+      } else {
+        //For now... maybe just tell the user it didn't work?
+      }
+    });
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
+    
   };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+    
 });

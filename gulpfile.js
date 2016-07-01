@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
+var concatCss = require('gulp-concat-css');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -12,6 +13,12 @@ var paths = {
 };
 
 gulp.task('default', ['sass']);
+
+gulp.task('css', function () {
+  return gulp.src('test/*.css')
+    .pipe(concatCss("styles/bundle.css"))
+    .pipe(gulp.dest('test/out/'));
+});
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
