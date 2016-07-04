@@ -1,0 +1,10 @@
+<ion-view view-title="Programs">
+	<ion-content>
+		<ion-list>
+			<ion-item class="item-avatar item-icon-right" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}">
+				<img ng-src="{{program.img}}">
+				{{program.title}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

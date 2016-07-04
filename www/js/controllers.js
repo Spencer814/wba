@@ -1,16 +1,44 @@
 angular.module('starter.controllers', [])
 
-.controller('WbaCtrl', function($scope) {})
+.controller('WbaCtrl', function($scope, $ionicModal, $timeout) {
 
-.controller('ProgramsCtrl', function($scope, Programs) {
-  $scope.programs = Programs.all();
-  $scope.remove = function(program) {
-    Programs.remove(program);
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on Wba start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter event:
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});
+
+  // Form data for the login modal
+  $scope.loginData = {};
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/login.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeLogin = function() {
+    $scope.modal.hide();
   };
-})
 
-.controller('ProgramDetailCtrl', function($scope, $stateParams, Programs) {
-  $scope.program = Programs.get($stateParams.programId);
+  // Open the login modal
+  $scope.login = function() {
+    $scope.modal.show();
+  };
+
+  // Perform the login action when the user submits the login form
+  $scope.doLogin = function() {
+    console.log('Doing login', $scope.loginData);
+
+    // Simulate a login delay. Remove this and replace with your login
+    // code if using a login system
+    $timeout(function() {
+      $scope.closeLogin();
+    }, 1000);
+  };
 })
 
 .controller('AboutCtrl', function($scope, Persons) {
@@ -28,29 +56,24 @@ angular.module('starter.controllers', [])
   $scope.person = Persons.get($stateParams.personId);
 })
 
-.controller('ParentsCtrl', function($scope, Events, $ionicPlatform, $cordovaCalendar, $timeout) {
-    
-  $ionicPlatform.ready(function() {
-    Events.get().then(function(events) {
-      $scope.events = events;
-    });
-  });
-  
-  $scope.addEvent = function(event, idx) {
-    
-    Events.add(event).then(function(result) {
-      if(result === 1) {
-        //update the event
-        $timeout(function() {
-          $scope.events[idx].status = true;
-          $scope.$apply();
-        });
-      } else {
-        //For now... maybe just tell the user it didn't work?
-      }
-    });
-
-    
+.controller('ProgramsCtrl', function($scope, Programs) {
+  $scope.programs = Programs.all();
+  $scope.remove = function(program) {
+    Programs.remove(program);
   };
-    
-});
+})
+
+.controller('ProgramDetailCtrl', function($scope, $stateParams, Programs) {
+  $scope.program = Programs.get($stateParams.programId);
+})
+
+.controller('AdmissionsCtrl', function($scope) {})
+
+.controller('ParentsCtrl', function($scope, Events) {
+  $scope.events = Events.all();
+  $scope.remove = function(event) {
+    Events.remove(event);
+  };
+})
+
+.controller('ContactCtrl', function($scope) {});

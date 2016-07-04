@@ -18,14 +18,5 @@
     "www/lib",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "angular-animate": "1.5.3",
-    "angular-ui-router": "0.2.13",
-    "angular-sanitize": "1.5.3",
-    "angular": "^1.5.7",
-    "bootstrap-sass": "^3.3.6",
-    "bootstrap": "^3.3.6",
-    "jquery": "^3.0.0"
-  }
+  ]
 }
