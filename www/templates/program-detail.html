@@ -1,20 +1,18 @@
 <ion-view view-title="Programs">
 	<ion-content>
-		<h2>{{program.title}}</h2>
-		<img ng-src="{{program.img}}" style="width: 64px; height: 64px"><br>
-		{{program.text}}
-		<!-- <div class="list card list-inset">
-			<div class="item item-divider item-balanced">
-				Teachers:
+		<div class="list card">
+      		<div class="item item-divider item-text-wrap item-royal">
+	      		{{program.title}}
+				
 			</div>
-			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="person in persons" type="item-text-wrap" href="#/wba/programs/{{person.id}}">
-				<h2>{{person.name}}</h2>
-				<h3>{{person.title}}</h3>
-				<i class="icon ion-chevron-right icon-accessory"></i>
-				<ion-option-button class="button-assertive" ng-click="remove(person)">
-					Delete
-				</ion-option-button>
-			</ion-item>
-		</div> -->
+			<div class="item item-text-wrap">
+				{{program.text}}
+			</div>
+      		<div class="item item-text-wrap">
+      			<img ng-src="{{program.img}}" style="width: 64px; height: 64px">
+      		</div>
+      		<div class="item item-divider">
+      		</div>
+		</div>
 	</ion-content>
 </ion-view>
