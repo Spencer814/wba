@@ -1,1 +1,68 @@
-/* Empty. Add your own CSS if you like */
+ion-content,
+.orange {
+	background: #f78b20;
+}
+
+.neutral {
+	background: #332263;
+}
+
+.title {
+	color: white;
+}
+
+.pics {
+	max-width: 100%;
+	height: auto;
+}
+
+.award {
+	width: 20%;
+	height: 20%;
+}
+
+.nope {
+	width: 15%;
+	height: 20%;
+}
+
+.brand {
+	height: 44;
+	display: block;
+    margin: 0 auto;
+}
+
+.word {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.purple-text {
+	color: #332263;
+}
+
+.purple {
+	background: #332263;
+	color: white;
+	text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
+}
+
+.green-text {
+	color: #b8d450;
+}
+
+.green {
+	background: #b8d450;
+	color: white;
+	text-shadow: 1px 1px 2px #000000, 0 0 25px #b8d450, 0 0 5px #809925;
+}
+
+.orange-text {
+	color: #f78b20;
+}
+
+.orange {
+	background: #f78b20;
+	color: white;
+	text-shadow: 1px 1px 2px #000000, 0 0 25px #f78b20, 0 0 5px #fbbe82;
+}

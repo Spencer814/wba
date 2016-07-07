@@ -8,35 +8,53 @@
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
+
+      <!-- <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear">
+          <img class="brand" src="img/favicon-194x194.png">
+        </button>
+      </ion-nav-buttons> -->
+
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
+    <ion-header-bar class="orange">
       <h1 class="title">Western Branch Academy</h1>
     </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item menu-close href="#/wba/home">
-          Home
-        </ion-item>
-        <ion-item menu-close href="#/wba/about">
-          About Us
-        </ion-item>
-        <ion-item menu-close href="#/wba/programs">
-          Programs
-        </ion-item>
-        <ion-item menu-close href="#/wba/admissions">
-          Admissions
-        </ion-item>
-        <ion-item menu-close href="#/wba/parents">
-          Parents
-        </ion-item>
-        <ion-item menu-close href="#/wba/contact">
-          Contact
-        </ion-item>
-      </ion-list>
+    <ion-content class="neutral">
+      <div class="list card list-inset">
+        <div class="item item-divider green">
+          Site Menu
+        </div>
+        <div class="item item-divider">
+          <ion-list>
+            <div class="list card list-inset">
+              <div class="item item-divider orange"></div>
+                <ion-item menu-close href="#/wba/home">
+                  Home
+                </ion-item>
+                <ion-item menu-close href="#/wba/about">
+                  About Us
+                </ion-item>
+                <ion-item menu-close href="#/wba/programs">
+                  Programs
+                </ion-item>
+                <ion-item menu-close href="#/wba/admissions">
+                  Admissions
+                </ion-item>
+                <ion-item menu-close href="#/wba/parents">
+                  Parents
+                </ion-item>
+                <ion-item menu-close href="#/wba/contact">
+                  Contact
+                </ion-item>
+              </div>
+            </div>
+          </ion-list>
+        </div>
+      </div>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

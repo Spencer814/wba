@@ -1,18 +1,33 @@
 <ion-view view-title="Programs">
 	<ion-content>
-		<div class="list card">
-      		<div class="item item-divider item-text-wrap item-royal">
-	      		{{program.title}}
-				
+		<div class="list card list-inset">
+			<div class="item item-divider purple">
+				{{program.title}} Program
 			</div>
-			<div class="item item-text-wrap">
-				{{program.text}}
+			<div class="item item-divider">
+				<div class="list card list-inset">
+					<div class="item item-divider green"></div>
+					<div class="item item-text-wrap">
+						{{program.text}}
+					</div>
+				</div>
 			</div>
-      		<div class="item item-text-wrap">
-      			<img ng-src="{{program.img}}" style="width: 64px; height: 64px">
-      		</div>
-      		<div class="item item-divider">
-      		</div>
+		</div>
+
+		<div class="list card list-inset">
+			<div class="item item-divider purple">
+				{{program.title}} Teachers
+			</div>
+			<div class="item item-divider">
+				<div class="list card list-inset">
+					<div class="item item-divider green">
+						{{program.title}}
+					</div>
+						<div class="item item-text-wrap">
+							{{program.text}}
+						</div>
+				</div>
+			</div>
 		</div>
 	</ion-content>
 </ion-view>

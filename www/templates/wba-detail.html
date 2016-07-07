@@ -1,101 +1,49 @@
-<ion-view view-title="Staff">
-  <ion-content>
-    <h2>{{person.name}}</h2>
-  	<h3>{{person.title}}</h3>
-    <p>{{person.text}}</p>
-  </ion-content>
-</ion-view>
+<script id="templates/contacts.html" type="text/ng-template">
+	<ion-side-menus>
+			<ion-pane ion-side-menu-content drag-content="false">
+					<ion-nav-bar class="bar-stable ">
+							<ion-nav-buttons side="left">
+									<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+							</ion-nav-buttons>
+					</ion-nav-bar>
+					<ion-view>
+						<br/>
+						<h1>Contacts Page</h1>
+						<div ui-view>
+							Contacts:
+							<div ui-view="contactsPage"></div>
+							Things:
+							<div ui-view="somethingElse"></div>
+						</div>
+					</ion-view>
+			</ion-pane>
+			<ion-side-menu side="left">
+				<ion-content>
+					hello
+				</ion-content>
+			</ion-side-menu>
+	</ion-side-menus>
+</script>
 
 
 
-<script id="templates/openings.html" type="text/ng-template">
-<ion-view view-title="Staff">
-  <ion-content>
-    <h2>{{person.name}}</h2>
-  	<h3>{{person.title}}</h3>
-    <p>{{person.text}}</p>
-  </ion-content>
-</ion-view>
-  </script>
+<script id="templates/contacts.list.html" type="text/ng-template">
+	<ul class="list">
+		<li class="item" ng-repeat="person in contacts"><a ng-href="#/contacts/{{person.id}}">{{person.name}}</a></li>
+	</ul>
+</script>
 
-  <script id="templates/home.html" type="text/ng-template">
-    <ion-view view-title="Welcome">
-      <ion-nav-bar align-title="right" class="bar-positive">
-        <ion-nav-back-button>
-        </ion-nav-back-button>
 
-        <ion-nav-buttons side="left">
-          <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-          </button>
-        </ion-nav-buttons>
-      </ion-nav-bar>
-      <ion-content class="padding">
-        <p>Swipe to the right to reveal the left menu.</p>
-        <p>(On desktop click and drag from left to right)</p>
-      </ion-content>
-    </ion-view>
-  </script>
 
-  <script id="templates/check-in.html" type="text/ng-template">
-    <ion-view view-title="Event Check-in">
-      <ion-content>
-        <form class="list" ng-show="showForm">
-          <div class="item item-divider">
-            Attendee Info
-          </div>
-          <label class="item item-input">
-            <input type="text" placeholder="First Name" ng-model="attendee.firstname">
-          </label>
-          <label class="item item-input">
-            <input type="text" placeholder="Last Name" ng-model="attendee.lastname">
-          </label>
-          <div class="item item-divider">
-            Shirt Size
-          </div>
-          <ion-radio ng-repeat="shirtSize in shirtSizes" ng-value="shirtSize.value" ng-model="attendee.shirtSize">
-            {{ shirtSize.text }}
-          </ion-radio>
-          <div class="item item-divider">
-            Lunch
-          </div>
-          <ion-toggle ng-model="attendee.vegetarian">
-            Vegetarian
-          </ion-toggle>
-          <div class="padding">
-            <button class="button button-block" ng-click="submit()">Checkin</button>
-          </div>
-        </form>
+<script id="templates/contacts.somethingElseList.html" type="text/ng-template">
+	<ul class="list">
+		<li class="item" ng-repeat="stuff in things"><a ng-href="#/contacts/se/{{stuff.id}}">{{stuff.name}}</a></li>
+	</ul>
+</script>
 
-        <div ng-hide="showForm">
-          <pre ng-bind="attendee | json"></pre>
-          <a href="#/event/attendees">View attendees</a>
-        </div>
-      </ion-content>
-    </ion-view>
-  </script>
 
-  <script id="templates/attendees.html" type="text/ng-template">
-    <ion-view view-title="Event Attendees">
-      <ion-content>
-        <div class="list">
-          <ion-toggle ng-repeat="attendee in attendees | orderBy:'firstname' | orderBy:'lastname'" ng-model="attendee.arrived" ng-change="arrivedChange(attendee)">
-            {{ attendee.firstname }} {{ attendee.lastname }}
-          </ion-toggle>
-          <div class="item item-divider">
-            Activity
-          </div>
-          <div class="item" ng-repeat="msg in activity">
-            {{ msg }}
-          </div>
-        </div>
-      </ion-content>
-    </ion-view>
-  </script>
-  
-    <script id="templates/prices.html" type="text/ng-template">
-    <ion-view view-title="Prices" hide-nav-bar="true">
-      <ion-content>
-        NO NAV BAR
-      </ion-content>
-    </ion-view>
-  </script>        
+
+<script id="templates/contacts.somethingElseDetail.html" type="text/ng-template">
+	{{stuff.name}}
+</script>
+

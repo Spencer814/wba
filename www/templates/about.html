@@ -1,81 +1,65 @@
 <ion-view view-title="About Us">
-  <ion-content>
+	<ion-content>
 
-    <div class="list card">
-      <div class="item item-divider item-royal">
-        About Us
-      </div>
-      <div class="item item-text-wrap">
-        Western Branch Academy is a full-day nationally accredited early childhood program that provides innovative programming for children where emotional, physical, intellectual, spiritual, and social development flourishes.  We are committed to providing high quality instruction through age-appropriate learning activities and qualified teachers.
-        <div class="list card list-inset">
-          <div class="item item-divider item-balanced">
-            We strive to:
-          </div>
-          <ion-slide-box on-slide-changed="slideHasChanged($index)">
-            <ion-slide>
-              <div class="item">
-                ​Support families through strong partnerships
-              </div>
-            </ion-slide>
-            <ion-slide>
-              <div class="item">
-                Transform curiosity into a love of learning
-              </div>
-            </ion-slide>
-            <ion-slide>
-              <div class="item">
-                Nurture each child's unique qualities and potential
-              </div>
-            </ion-slide>
-            <ion-slide>
-              <div class="item">
-                Foster opportunities to learn about God's world
-              </div>
-            </ion-slide>
-            <ion-slide>
-              <div class="item">
-                Establish a work environment where professionalism, growth, collaboration, and creativity are demonstrated
-              </div>
-            </ion-slide>
-            <ion-slide>
-              <div class="item">
-                Connect with the community through community service projects
-              </div>
-            </ion-slide>
-            <ion-slide>
-              <div class="item">
-                Meet the changing preschool educational needs of the community
-              </div>
-            </ion-slide>
-          </ion-slide-box>
-        </div>
-      </div>
-    </div>
+		<div class="list card list-inset">
+			<div class="item item-divider purple">
+				About Us
+			</div>
 
-    <div class="list card">
-      <div class="item item-divider item-royal">
-        Staff
-      </div>
-      <div class="item item-text-wrap">
-        Teachers makes a huge impact on the lives of young children and their families.  ​We strive to be a team-oriented environment that encourages professional development in one another while building strong relationships with one another.  All of our preschool teachers hold a college degree and have early childhood classroom experience.  We strive to provide high quality educational programming at Western Branch Academy.
-        <ion-list>
-          <div class="list card list-inset">
-            <div class="item item-divider item-balanced">
-              Introducing our talented team members:
-            </div>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="person in persons" type="item-text-wrap" href="#/wba/about/{{person.id}}">
-              {{person.name}}
-              <p>{{person.title}}</p>
-              <i class="icon ion-chevron-right icon-accessory"></i>
+			<div class="item item-divider">
+				<div class="card">
+					<div class="item item-divider green"></div>
+					<div class="item item-text-wrap">
+						Western Branch Academy is a full-day nationally accredited early childhood program that provides innovative programming for children where emotional, physical, intellectual, spiritual, and social development flourishes. We are committed to providing high quality instruction through age-appropriate learning activities and qualified teachers.
+					</div>
+				</div>
 
-              <ion-option-button class="button-assertive" ng-click="remove(person)">
-                Delete
-              </ion-option-button>
-            </ion-item>
-          </div>
-        </ion-list>
-      </div>
-    </div>
+				<div class="card">
+					<div class="item item-divider green">
+						We strive to:
+					</div>
+					<ion-slide-box on-slide-changed="slideHasChanged($index)">
+						<ion-slide class="item item-text-wrap" ng-repeat="value in values">
+							{{value.text}}
+						</ion-slide>
+					</ion-slide-box>
+				</div>
+			</div>
+		</div>
 
-  </ion-content>
+		<div class="list card list-inset">
+			<div class="item item-divider purple">
+				Our Staff
+			</div>
+			<div class="item item-divider">
+
+				<div class="card">
+					<div class="item item-divider green"></div>
+					<div class="list list-inset">
+						<img class="pics" src="img/Staff--element134.jpg">
+					</div>
+					<div class="item item-inset item-text-wrap">
+						Teachers makes a huge impact on the lives of young children and their families.  ​We strive to be a team-oriented environment that encourages professional development in one another while building strong relationships with one another.  All of our preschool teachers hold a college degree and have early childhood classroom experience.  We strive to provide high quality educational programming at Western Branch Academy.
+					</div>
+				</div>
+
+				<ion-list>
+					<div class="list card list-inset">
+						<div class="item item-divider green">
+							Introducing our talented team members:
+						</div>
+						<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="person in persons" type="item-text-wrap" href="#/wba/about/{{person.id}}">
+							{{person.name}}
+							<p>{{person.title}}</p>
+							<i class="icon ion-chevron-right icon-accessory"></i>
+							<ion-option-button class="button-assertive" ng-click="remove(person)">
+								Delete
+							</ion-option-button>
+						</ion-item>
+					</div>
+				</ion-list>
+			</div>
+		</div>
+
+	</ion-content>
 </ion-view>

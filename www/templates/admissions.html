@@ -2,61 +2,39 @@
   <ion-content>
 
     <div class="list card">
-      <div class="item item-divider item-text-wrap item-royal">
+      <div class="item item-divider item-text-wrap purple">
         Please call to schedule a tour
       </div>
       <div class="item item-text-wrap">
         To enroll at Western Branch Academy a complete application packet must be submitted. Fall class assignment is based upon your child's age as of September 30, 2016. Summer class assignment is based upon your child's age as of June 2016. Children must be two by June 20th to enroll for Summer Camp.
-        <br><br>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider item-text-wrap purple">
+        Please call to schedule a tour
+      </div>
+      <div class="item item-divider">
         <div class="list card list-inset">
-          <div class="item item-divider item-balanced">
+          <div class="item item-divider item-text-wrap green">
             An enrollment packet consists of the following documents:
           </div>
-          <div class="list list-inset">
-            <div class="item row reseponsive-sm">
-              ​<div class="col">1.</div>
-              <div class="col col-75">Registration Form</div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">2.</div>
-              <div class="col col-75">Parental Permission and Tuition Agreement Form</div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">3.</div>
-              <div class="col col-75">Enrollment Agreement Form</div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">4.</div>
-              <div class="col col-75">Completed Physical</div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">5.</div>
-              <div class="col col-75">Current Immunizations</div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">6.</div>
-              <div class="col col-75">Proof of Identity<span class="item-note">(e.g. Birth Certificate)</span></div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">7.</div>
-              <div class="col col-75">Fall Registration Fee ($110 1st child, $ 50 each additional child)<br>Summer Registration Fee ($75 1st child, $50 each additional child)</div>
-            </div>
-            <div class="item row reseponsive-sm">
-              <div class="col">8.</div>
-              <div class="col col-75">School Year Activity Fee ($40-2 yo, $50-3 yo, $75-4 yo, and $100-Kindergarten)</div>
-            </div>
+          <div class="list list-inset item-text-wrap">
+            <ion-item class="row" ng-repeat="admission in admissions">
+              ​<span class="col">{{admission.id + 1}}</span>
+              <span class="col col-75">{{admission.text}}</span>
+            </ion-item>
           </div>
         </div>
         <div class="list card list-inset">
-          <div class="item item-divider item-balanced">
+          <div class="item item-divider green">
             Discounts Available:
           </div>
-          <div class="list list-inset">
-            <div class="item row reseponsive-sm">
+          <div class="list list-inset item-text-wrap">
+            <div class="item row">
               ​<div class="col">1.</div>
               <div class="col col-75">$10 Off Registration Fee (1st Child Only) when signing up for summer and fall at the same time</div>
             </div>
-            <div class="item row reseponsive-sm">
+            <div class="item row">
               <div class="col">2.</div>
               <div class="col col-75">2% discount given for tuition payments paying by Automatic (ACH) payments, monthly payments, or for the year in full</div>
             </div>
@@ -66,62 +44,46 @@
     </div>
 
     <div class="list card">
-      <div class="item item-divider item-royal">
+      <div class="item item-divider purple">
         What to bring for the first day:
       </div>
-      <div class="list card list-inset">
-        <ul class="list">
-          <li class="item">
-            Registration Packet
-          </li>
-          <li class="item">
-            Shot Record with Physical Form (Must receive within first 30 days of enrollment)
-          </li>
-          <li class="item">
-            Birth Certificate
-          </li>
-          <li class="item">
-            School supplies (Refer to Supply List)
-          </li>
-          <li class="item">
-            Tote bag
-          </li>
-          <li class="item">
-            Seasonal change of clothes with socks (Please place in labelled ziploc bag)
-          </li>
-          <li class="item">
-            Nap map and crib sheet (full days students)
-          </li>
-        </ul>
+      <div class="item item-divider">
+        <div class="list card list-inset">
+          <ion-item class="item item-text-wrap" ng-repeat="doc in docs">
+            {{doc.text}}
+          </ion-item>
+        </div>
       </div>
     </div>
 
     <div class="list card">
-      <div class="item item-icon-left item-divider item-royal">
+      <div class="item item-icon-left item-divider purple">
         <i class="icon ion-document-text"></i>
         Admissions Forms
       </div>
-      <div class="list card list-inset">
-        <ul class="list">
-          <li class="item">
-            <a href="docs/admin/Enrollment_Agreement_2016-17.pdf" target="_blank">Enrollment Agreement Form</a>
-          </li>
-          <li class="item">
-            <a href="docs/admin/Registration_Form_2016-17.pdf" target="_blank">Registration Form</a>
-          </li>
-          <li class="item">
-            <a href="docs/health/Physical_Form.pdf" target="_blank">Physical Form</a>
-          </li>
-          <li class="item">
-            <a href="docs/admin/Parent_Permission_and_Tuition_Agreement_2016-17.pdf" target="_blank">Parental Permission and Tuition Agreement</a>
-          </li>
-          <li class="item">
-            <a href="docs/admin/Summer_Selection_Sheet_2016.pdf" target="_blank">Summer Camp Selection Sheet</a>
-          </li>
-          <li class="item">
-            <a href="docs/info/WBA_Brochure.pdf" target="_blank">WBA Brochure</a>
-          </li>
-        </ul>
+      <div class="item item-divider">
+        <div class="list card list-inset">
+          <ul class="list">
+            <li class="item">
+              <a href="docs/admin/Enrollment_Agreement_2016-17.pdf" target="_blank">Enrollment Agreement Form</a>
+            </li>
+            <li class="item">
+              <a href="docs/admin/Registration_Form_2016-17.pdf" target="_blank">Registration Form</a>
+            </li>
+            <li class="item">
+              <a href="docs/health/Physical_Form.pdf" target="_blank">Physical Form</a>
+            </li>
+            <li class="item item-text-wrap">
+              <a href="docs/admin/Parent_Permission_and_Tuition_Agreement_2016-17.pdf" target="_blank">Parental Permission and Tuition Agreement</a>
+            </li>
+            <li class="item">
+              <a href="docs/admin/Summer_Selection_Sheet_2016.pdf" target="_blank">Summer Camp Selection Sheet</a>
+            </li>
+            <li class="item">
+              <a href="docs/info/WBA_Brochure.pdf" target="_blank">WBA Brochure</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 

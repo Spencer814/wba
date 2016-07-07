@@ -27,7 +27,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/home.html'
+        templateUrl: 'templates/home.html',
+        controller: 'WbaCtrl'
       }
     }
   })
@@ -76,7 +77,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/admissions',
     views: {
       'menuContent': {
-        templateUrl: 'templates/admissions.html'
+        templateUrl: 'templates/admissions.html',
+        controller: 'AdmissionsCtrl'
       }
     }
   })

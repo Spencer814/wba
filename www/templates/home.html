@@ -1,52 +1,65 @@
 <ion-view view-title="Western Branch Academy">
-  <ion-content class="padding">
+	<ion-content class="padding">
 
-    <div class="list card list-inset">
-      <div class="item item-divider item-royal">
-        <h2>Welcome to Western Branch Academy!</h2>
-      </div>
-    </div>
-    <!-- Temporary inline styling -->
-    <ion-slide-box on-slide-changed="slideHasChanged($index)">
-      <ion-slide>
-        <img src="img/IMG_7874.jpg" style="max-width: 100%;
-height: auto;">
-      </ion-slide>
-      <ion-slide>
-        <img src="img/IMG_7904.jpg" style="max-width: 100%;
-height: auto;">
-      </ion-slide>
-      <ion-slide>
-        <img src="img/IMG_7923.jpg" style="max-width: 100%;
-height: auto;">
-      </ion-slide>
-      <ion-slide>
-        <img src="img/IMG_7942.jpg" style="max-width: 100%;
-height: auto;">
-      </ion-slide>
-      <ion-slide>
-        <img src="img/IMG_7957.jpg" style="max-width: 100%;
-height: auto;">
-      </ion-slide>
-    </ion-slide-box>
-    <div class="card">
-      <div class="item item-divider item-balanced"></div>
-        <div class="item item-text-wrap">
-          Thank you so much for voting for WBA in The Pilot's Best of Hampton Roads Contest! You have once again made us the Best Child Development Center in the Portsmouth Area!
-        </div>
-    </div>
-    <div class="card">
-      <div class="item item-divider item-balanced"></div>
-        <div class="item item-text-wrap">
-          The mission of Western Branch Academy is to <b>believe</b> in the abilities of young children; create a community for children to <b>belong</b> based on love, trust, and respect; and enable children to <b>become</b> creative thinkers with a love for learning.
-        </div>
-    </div>
-    <div class="card">
-      <div class="item item-divider item-balanced"></div>
-        <div class="item item-text-wrap">
-          We provide innovative preschool and Kindergarten programming for children ages two through six. We also provide Kindergarten and after school care for students enrolled at Chittum Elementary or Western Branch Primary. We are licensed as a child day center through the Virginia Department of Social Services.
-        </div>
-    </div>
-    
-  </ion-content>
+		<div class="list card list-inset">
+			<div class="item item-divider purple">
+				Welcome to Western Branch Academy!
+			</div>
+
+			<div class="item item-divider">
+				<ion-slide-box on-slide-changed="slideHasChanged($index)">
+					<ion-slide class="card list list-inset" ng-repeat="photo in photos">
+						<img class="pics" src="{{photo.src}}">
+					</ion-slide>
+				</ion-slide-box>
+
+				<div class="card">
+					<div class="item item-divider green"></div>
+						<div class="item item-text-wrap">
+							Thank you so much for voting for WBA in The Pilot's Best of Hampton Roads Contest! You have once again made us the Best Child Development Center in the Portsmouth Area!
+							<ion-slide-box on-slide-changed="slideHasChanged($index)">
+								<ion-slide class="list list-inset">
+									<img class="award brand" src="img/2012_botb_logo.jpg">
+								</ion-slide>
+								<ion-slide class="list list-inset">
+									<img class="award brand" src="img/Best_of_Gold_Winner_logo.jpg">
+								</ion-slide>
+								<ion-slide class="list list-inset">
+									<img class="award brand" src="img/2013_bestof_logo_winner.jpg">
+								</ion-slide>
+								<ion-slide class="list list-inset">
+									<img class="nope brand" src="img/2013_botb_logo.jpg">
+								</ion-slide>
+								<ion-slide class="list list-inset">
+									<img class="award brand" src="img/bestof-logo-2014.png">
+								</ion-slide>
+								<ion-slide class="list list-inset">
+									<img class="award brand" src="img/bestof-logos-combined-2015.png">
+								</ion-slide>
+							</ion-slide-box>
+						</div>
+					</div>
+
+				<div class="card">
+					<div class="item item-divider green"></div>
+						<div class="item item-text-wrap">
+							The mission of Western Branch Academy is to <span class="word purple-text">believe</span> in the abilities of young children; create a community for children to <span class="word green-text">belong</span> based on love, trust, and respect; and enable children to <span class="word orange-text">become</span> creative thinkers with a love for learning.
+						</div>
+				</div>
+
+				<div class="card">
+					<div class="item item-divider green"></div>
+						<div class="item item-text-wrap">
+							We provide innovative preschool and Kindergarten programming for children ages two through six. We also provide Kindergarten and after school care for students enrolled at Chittum Elementary or Western Branch Primary. We are licensed as a child day center through the Virginia Department of Social Services.
+							<div class="row">
+								<img class="col award" src="img/vsqi.png">
+								<img class="col award" src="img/naeyc1.png">
+							</div>
+						</div>
+				</div>
+
+			</div>
+		</div>
+
+	</ion-content>
 </ion-view>

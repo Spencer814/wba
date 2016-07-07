@@ -1,7 +1,17 @@
 <ion-view view-title="Staff">
-  <ion-content>
-    <h2>{{person.name}}</h2>
-  	<h3>{{person.title}}</h3>
-    <p>{{person.text}}</p>
-  </ion-content>
+	<ion-content>
+		<div class="list card">
+			<div class="item item-divider item-text-wrap purple">
+				{{person.name}}
+			</div>
+			<div class="item item-divider">
+				{{person.title}}
+				<div class="list card list-inset">
+					<div class="item item-text-wrap">
+						{{person.text}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
 </ion-view>
