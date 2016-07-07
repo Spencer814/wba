@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('wbaApp.controllers', [])
 
 .controller('WbaCtrl', function($scope, $ionicModal, $timeout, Photos) {
 
@@ -7,10 +7,29 @@ angular.module('starter.controllers', [])
 
 	// Create the login modal that we will use later
 	$ionicModal.fromTemplateUrl('templates/login.html', {
-		scope: $scope
+		scope: $scope,
+		animation: 'slide-in-up'
 	}).then(function(modal) {
 		$scope.modal = modal;
 	});
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
 
 	// Triggered in the login modal to close it
 	$scope.closeLogin = function() {

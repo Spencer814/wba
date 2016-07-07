@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('wbaApp', ['ionic', 'wbaApp.controllers', 'wbaApp.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

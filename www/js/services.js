@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('wbaApp.services', [])
 
 .factory('Photos', function() {
 

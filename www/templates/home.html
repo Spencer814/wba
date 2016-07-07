@@ -9,7 +9,7 @@
 			<div class="item item-divider">
 				<ion-slide-box on-slide-changed="slideHasChanged($index)">
 					<ion-slide class="card list list-inset" ng-repeat="photo in photos">
-						<img class="pics" src="{{photo.src}}">
+						<img ng-src="{{photo.src}}" class="pics">
 					</ion-slide>
 				</ion-slide-box>
 
@@ -52,8 +52,12 @@
 						<div class="item item-text-wrap">
 							We provide innovative preschool and Kindergarten programming for children ages two through six. We also provide Kindergarten and after school care for students enrolled at Chittum Elementary or Western Branch Primary. We are licensed as a child day center through the Virginia Department of Social Services.
 							<div class="row">
-								<img class="col award" src="img/vsqi.png">
-								<img class="col award" src="img/naeyc1.png">
+								<a href="#" onclick="window.open('http://www.smartbeginnings.org/home/virginia-star-quality-initiative/virginia-quality.aspx', '_system', 'location=yes');">
+									<img class="col" src="img/vsqi.png">
+								</a>
+								<a href="#" onclick="window.open('http://www.naeyc.org/', '_system', 'location=yes');">
+									<img class="col" src="img/naeyc1.png">
+								</a>
 							</div>
 						</div>
 				</div>
