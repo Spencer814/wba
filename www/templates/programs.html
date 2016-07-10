@@ -4,13 +4,14 @@
 			<div class="item item-divider purple">
 				Our Programs
 			</div>
-			<div class="item item-divider">
+			<div class="item item-divider center">
 				<ion-list>
 					<div class="list card list-inset">
 						<div class="item item-divider green"></div>
-						<ion-item class="item item-avatar item-icon-right row" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}">
-							<img class="pics col" ng-src="{{program.img}}">
-							<span class="col col-75">{{program.title}}</span>
+						<ion-item class="item item-avatar item-icon-right" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}">
+							<img class="pics" ng-src="{{program.img}}">
+							{{program.title}}
+							<i class="icon ion-chevron-right icon-accessory"></i>
 						</ion-item>
 					</div>
 				</ion-list>

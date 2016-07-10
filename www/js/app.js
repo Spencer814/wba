@@ -5,8 +5,8 @@ angular.module('wbaApp', ['ionic', 'wbaApp.controllers', 'wbaApp.services'])
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
+
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
@@ -89,6 +89,26 @@ angular.module('wbaApp', ['ionic', 'wbaApp.controllers', 'wbaApp.services'])
       'menuContent': {
         templateUrl: 'templates/parents.html',
         controller: 'ParentsCtrl'
+      }
+    }
+  })
+
+  .state('wba.forms', {
+    url: '/forms',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/forms.html',
+        controller: 'FormsCtrl'
+      }
+    }
+  })
+
+  .state('wba.form-detail', {
+    url: '/forms/:sectionId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/form-detail.html',
+        controller: 'FormDetailCtrl'
       }
     }
   })

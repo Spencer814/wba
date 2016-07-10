@@ -2,43 +2,28 @@
 	<ion-content class="padding">
 
 		<div class="list card list-inset">
-			<div class="item item-divider purple">
+			<div class="item item-divider item-text-wrap purple">
 				Welcome to Western Branch Academy!
 			</div>
 
 			<div class="item item-divider">
-				<ion-slide-box on-slide-changed="slideHasChanged($index)">
-					<ion-slide class="card list list-inset" ng-repeat="photo in photos">
+				<ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
+					<ion-slide class="card list list-inset center" ng-repeat="photo in photos">
 						<img ng-src="{{photo.src}}" class="pics">
 					</ion-slide>
 				</ion-slide-box>
 
 				<div class="card">
 					<div class="item item-divider green"></div>
-						<div class="item item-text-wrap">
-							Thank you so much for voting for WBA in The Pilot's Best of Hampton Roads Contest! You have once again made us the Best Child Development Center in the Portsmouth Area!
-							<ion-slide-box on-slide-changed="slideHasChanged($index)">
-								<ion-slide class="list list-inset">
-									<img class="award brand" src="img/2012_botb_logo.jpg">
-								</ion-slide>
-								<ion-slide class="list list-inset">
-									<img class="award brand" src="img/Best_of_Gold_Winner_logo.jpg">
-								</ion-slide>
-								<ion-slide class="list list-inset">
-									<img class="award brand" src="img/2013_bestof_logo_winner.jpg">
-								</ion-slide>
-								<ion-slide class="list list-inset">
-									<img class="nope brand" src="img/2013_botb_logo.jpg">
-								</ion-slide>
-								<ion-slide class="list list-inset">
-									<img class="award brand" src="img/bestof-logo-2014.png">
-								</ion-slide>
-								<ion-slide class="list list-inset">
-									<img class="award brand" src="img/bestof-logos-combined-2015.png">
-								</ion-slide>
-							</ion-slide-box>
-						</div>
+					<div class="item item-text-wrap">
+						Thank you so much for voting for WBA in The Pilot's Best of Hampton Roads Contest! You have once again made us the Best Child Development Center in the Portsmouth Area!
+						<ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
+							<ion-slide class="list list-inset center" ng-repeat="best in bests">
+								<img ng-src="{{best.src}}" class="award">
+							</ion-slide>
+						</ion-slide-box>
 					</div>
+				</div>
 
 				<div class="card">
 					<div class="item item-divider green"></div>
@@ -52,11 +37,11 @@
 						<div class="item item-text-wrap">
 							We provide innovative preschool and Kindergarten programming for children ages two through six. We also provide Kindergarten and after school care for students enrolled at Chittum Elementary or Western Branch Primary. We are licensed as a child day center through the Virginia Department of Social Services.
 							<div class="row">
-								<a href="#" onclick="window.open('http://www.smartbeginnings.org/home/virginia-star-quality-initiative/virginia-quality.aspx', '_system', 'location=yes');">
-									<img class="col" src="img/vsqi.png">
+								<a href="#" class="center" onclick="window.open('http://www.smartbeginnings.org/home/virginia-star-quality-initiative/virginia-quality.aspx', '_system', 'location=yes', 'toolbar=yes'); return false;">
+									<img class="col honors" src="img/vsqi.png">
 								</a>
-								<a href="#" onclick="window.open('http://www.naeyc.org/', '_system', 'location=yes');">
-									<img class="col" src="img/naeyc1.png">
+								<a href="#" class="center" onclick="window.open('http://www.naeyc.org/', '_system', 'location=yes', 'toolbar=yes'); return false;">
+									<img class="col honors" src="img/naeyc.png">
 								</a>
 							</div>
 						</div>

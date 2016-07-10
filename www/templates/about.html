@@ -18,8 +18,8 @@
 					<div class="item item-divider green">
 						We strive to:
 					</div>
-					<ion-slide-box on-slide-changed="slideHasChanged($index)">
-						<ion-slide class="item item-text-wrap" ng-repeat="value in values">
+					<ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
+						<ion-slide class="item item-text-wrap center" ng-repeat="value in values">
 							{{value.text}}
 						</ion-slide>
 					</ion-slide-box>
@@ -35,7 +35,7 @@
 
 				<div class="card">
 					<div class="item item-divider green"></div>
-					<div class="list list-inset">
+					<div class="list list-inset center">
 						<img class="pics" src="img/Staff--element134.jpg">
 					</div>
 					<div class="item item-inset item-text-wrap">
@@ -45,15 +45,14 @@
 
 				<ion-list>
 					<div class="list card list-inset">
-						<div class="item item-divider green">
+						<div class="item item-divider item-text-wrap green">
 							Introducing our talented team members:
 						</div>
-						<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="person in persons" type="item-text-wrap" href="#/wba/about/{{person.id}}">
+						<ion-item class="item item-text-wrap item-icon-right center" ng-repeat="person in persons" type="item-text-wrap" href="#/wba/about/{{person.id}}">
 							{{person.name}}
 							<p>{{person.title}}</p>
 							<i class="icon ion-chevron-right icon-accessory"></i>
 							<ion-option-button class="button-assertive" ng-click="remove(person)">
-								Delete
 							</ion-option-button>
 						</ion-item>
 					</div>

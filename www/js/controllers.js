@@ -1,6 +1,6 @@
 angular.module('wbaApp.controllers', [])
 
-.controller('WbaCtrl', function($scope, $ionicModal, $timeout, Photos) {
+.controller('WbaCtrl', function($scope, $ionicModal, $timeout, Photos, Bests) {
 
 	// Form data for the login modal
 	$scope.loginData = {};
@@ -53,8 +53,10 @@ angular.module('wbaApp.controllers', [])
 	};
 
 	$scope.photos = Photos.all();
-	$scope.remove = function(photo) {
+	$scope.bests = Bests.all();
+	$scope.remove = function(photo, best) {
 		Photos.remove(photo);
+		Bests.remove(best);
 	};
 })
 
@@ -110,6 +112,21 @@ angular.module('wbaApp.controllers', [])
 		Rules.remove(rule);
 		Extras.remove(extra);
 	};
+})
+
+.controller('FormsCtrl', function($scope, Forms, Sections) {
+	$scope.forms = Forms.all();
+	$scope.sections = Sections.all();
+
+	$scope.remove = function(form, section) {
+		Forms.remove(form);
+		Sections.remove(form);
+	};
+})
+
+.controller('FormDetailCtrl', function($scope, $stateParams, Forms, Sections) {
+	$scope.form = Forms.get($stateParams.formId);
+	$scope.section = Sections.get($stateParams.sectionId);
 })
 
 .controller('ContactCtrl', function($scope) {});
