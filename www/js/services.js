@@ -37,6 +37,49 @@ angular.module('wbaApp.services', [])
 	};
 })
 
+.factory('Bests', function() {
+
+	var bests = [{
+		id: 0,
+		src: 'img/best-of-2012.png'
+	}, {
+		id: 1,
+		src: 'img/best-of-the-best-2012.png'
+	}, {
+		id: 2,
+		src: 'img/best-of-2013.png'
+	}, {
+		id: 3,
+		src: 'img/best-of-the-best-2013.png'
+	}, {
+		id: 4,
+		src: 'img/best-of-2014.png'
+	}, {
+		id: 5,
+		src: 'img/best-of-2015.png'
+	}, {
+		id: 6,
+		src: 'img/best-of-2016.png'
+	}];
+
+	return {
+		all: function () {
+			return bests;
+		},
+		remove: function (best) {
+			bests.splice(bests.indexOf(best), 1);
+		},
+		get: function (bestId) {
+			for (var i = 0; i < bests.length; i++) {
+				if (bests[i].id === parseInt(bestId)) {
+					return bests[i];
+				}
+			}
+			return null;
+		}
+	};
+})
+
 .factory('Values', function() {
 
 	var values = [{
@@ -213,28 +256,36 @@ angular.module('wbaApp.services', [])
 
 	var admissions = [{
 		id: 0,
-		text: 'Registration Form'
+		text: 'Registration Form',
+		src: 'docs/admin/Registration_Form_2016-17.pdf'
 	}, {
 		id: 1,
-		text: 'Parental Permission and Tuition Agreement Form'
+		text: 'Parental Permission and Tuition Agreement Form',
+		src: 'docs/admin/Parent_Permission_and_Tuition_Agreement_2016-17.pdf'
 	}, {
 		id: 2,
-		text: 'Enrollment Agreement Form'
+		text: 'Enrollment Agreement Form',
+		src: 'docs/admin/Enrollment_Agreement_2016-17.pdf'
 	}, {
 		id: 3,
-		text: 'Completed Physical'
+		text: 'Completed Physical',
+		src: 'docs/health/Physical_Form.pdf'
 	}, {
 		id: 4,
-		text: 'Current Immunizations'
+		text: 'Current Immunizations (Within first 30 days of enrollment)',
+		src: '#'
 	}, {
 		id: 5,
-		text: 'Proof of Identity (e.g. Birth Certificate)'
+		text: 'Proof of Identity (e.g. Birth Certificate)',
+		src: '#'
 	}, {
 		id: 6,
-		text: 'Fall Registration Fee ($110 1st child, $ 50 each additional child) Summer Registration Fee ($75 1st child, $50 each additional child)'
+		text: 'Fall Registration Fee',
+		src: '#'
 	}, {
 		id: 7,
-		text: 'School Year Activity Fee ($40-2 yo, $50-3 yo, $75-4 yo, and $100-Kindergarten)'
+		text: 'School Year Activity Fee',
+		src: '#'
 	}];
 
 	return {
@@ -262,22 +313,16 @@ angular.module('wbaApp.services', [])
 		text: 'Registration Packet'
 	}, {
 		id: 1,
-		text: 'Shot Record with Physical Form (Must receive within first 30 days of enrollment)'
-	}, {
-		id: 2,
-		text: 'Birth Certificate'
-	}, {
-		id: 3,
 		text: 'School supplies (Refer to Supply List)'
 	}, {
-		id: 4,
+		id: 2,
 		text: 'Tote bag'
 	}, {
-		id: 5,
+		id: 3,
 		text: 'Seasonal change of clothes with socks (Please place in labelled ziploc bag)'
 	}, {
-		id: 6,
-		text: 'Nap map and crib sheet (full days students)'
+		id: 4,
+		text: 'Nap mat and crib sheet (full days students)'
 	}];
 
 	return {
@@ -445,19 +490,22 @@ angular.module('wbaApp.services', [])
 		title: 'Dancing Little Stars',
 		day: 'Tuesdays',
 		time: '2:30 - 3:30 pm',
-		url: 'virginialittlestars.com'
+		site: 'virginialittlestars.com',
+		url: 'http://virginialittlestars.com/'
 	}, {
 		id: 1,
 		title: 'Soccer Shots',
 		day: '2 sessions on Wednesdays',
 		time: '2:30 - 3:00 pm and 3:00 - 3:30 pm',
-		url: 'hamptonroads.ssreg.org'
+		site: 'hamptonroads.ssreg.org',
+		url: 'https://cnps.ssreg.org/index.php?'
 	}, {
 		id: 2,
 		title: 'Fun Bus',
 		day: '2 sessions on Tuesdays',
 		time: '2:30 - 3:00 pm and 3:00 - 3:30 pm',
-		url: 'funbuses.com/hamptonroads'
+		site: 'funbuses.com/hamptonroads',
+		url: 'http://funbuses.com/hamptonroads/'
 	}];
 
 	return {
@@ -471,6 +519,210 @@ angular.module('wbaApp.services', [])
 			for (var i = 0; i < extras.length; i++) {
 				if (extras[i].id === parseInt(extraId)) {
 					return extras[i];
+				}
+			}
+			return null;
+		}
+	};
+})
+
+.factory('Forms', function () {
+
+	var forms = [{
+		id: 0,
+		sectionid: 1,
+		title: 'Enrollment Agreement',
+		src: 'docs/admin/Enrollment_Agreement_2016-17.pdf'
+	}, {
+		id: 1,
+		sectionid: 1,
+		title: 'Registration Form',
+		src: 'docs/admin/Registration_Form_2016-17.pdf'
+	}, {
+		id: 2,
+		sectionid: 1,
+		title: 'Physical Form',
+		src: 'docs/health/Physical_Form.pdf'
+	}, {
+		id: 3,
+		sectionid: 1,
+		title: 'Parent Permission and Tuition Agreement',
+		src: 'docs/admin/Parent_Permission_and_Tuition_Agreement_2016-17.pdf'
+	}, {
+		id: 4,
+		sectionid: 1,
+		title: 'Summer Camp Selection Sheet',
+		src: 'docs/admin/Summer_Selection_Sheet_2016.pdf'
+	}, {
+		id: 5,
+		sectionid: 1,
+		title: 'Parent Direct Debit Authorization',
+		src: 'docs/admin/Parent_Direct_Debit_Authorization.pdf'
+	}, {
+		id: 6,
+		sectionid: 2,
+		title: 'Asthma Action Plan',
+		src: 'docs/health/Asthma_Action_Plan.pdf'
+	}, {
+		id: 7,
+		sectionid: 2,
+		title: 'Medication Consent',
+		src: 'docs/health/Medication_Consent.pdf'
+	}, {
+		id: 8,
+		sectionid: 2,
+		title: 'Topical Skin Product Form',
+		src: 'docs/health/Topical_Skin_Product_Form.pdf'
+	}, {
+		id: 9,
+		sectionid: 3,
+		title: 'Kindergarten',
+		src: 'docs/supply/Kindergarten_Supply_List_2015.pdf'
+	}, {
+		id: 10,
+		sectionid: 3,
+		title: '2 Year Old Program',
+		src: 'docs/supply/PK_2_Supply_List_2015.pdf'
+	}, {
+		id: 11,
+		sectionid: 3,
+		title: '3 Year Old Program',
+		src: 'docs/supply/PK_3_Supply_List_2015.pdf'
+	}, {
+		id: 12,
+		sectionid: 3,
+		title: '4 Year Old Program',
+		src: 'docs/supply/PK_4_Supply_List_2015.pdf'
+	}, {
+		id: 14,
+		sectionid: 3,
+		title: 'Summer Program',
+		src: 'docs/supply/SUMMER_SUPPLY_LIST.pdf'
+	}, {
+		id: 15,
+		sectionid: 3,
+		title: 'Great Goodbyes',
+		src: 'docs/info/Great_Goodbyes.pdf'
+	}, {
+		id: 16,
+		sectionid: 4,
+		title: 'Employment Application',
+		src: 'docs/admin/Employment_Application.pdf'
+	}];
+
+	return {
+		all: function () {
+			return forms;
+		},
+		remove: function (form) {
+			forms.splice(forms.indexOf(form), 1);
+		},
+		get: function (formId) {
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].id === parseInt(formId)) {
+					return forms[i];
+				}
+			}
+			return null;
+		}
+	};
+})
+
+.factory('Sections', function() {
+
+	var sections = [{
+		id: 1,
+		title: 'Admissions Forms',
+		form: [{
+			id: 0,
+			title: 'Enrollment Agreement',
+			src: 'docs/admin/Enrollment_Agreement_2016-17.pdf'
+		}, {
+			id: 1,
+			title: 'Registration Form',
+			src: 'docs/admin/Registration_Form_2016-17.pdf'
+		}, {
+			id: 2,
+			title: 'Physical Form',
+			src: 'docs/health/Physical_Form.pdf'
+		}, {
+			id: 3,
+			title: 'Parent Permission and Tuition Agreement',
+			src: 'docs/admin/Parent_Permission_and_Tuition_Agreement_2016-17.pdf'
+		}, {
+			id: 4,
+			title: 'Summer Camp Selection Sheet',
+			src: 'docs/admin/Summer_Selection_Sheet_2016.pdf'
+		}, {
+			id: 5,
+			title: 'Parent Direct Debit Authorization',
+			src: 'docs/admin/Parent_Direct_Debit_Authorization.pdf'
+		}]
+	}, {
+		id: 2,
+		title: 'Health Forms',
+		form: [{
+			id: 0,
+			title: 'Asthma Action Plan',
+			src: 'docs/health/Asthma_Action_Plan.pdf'
+		}, {
+			id: 1,
+			title: 'Medication Consent',
+			src: 'docs/health/Medication_Consent.pdf'
+		}, {
+			id: 2,
+			title: 'Topical Skin Product Form',
+			src: 'docs/health/Topical_Skin_Product_Form.pdf'
+		}]
+	}, {
+		id: 3,
+		title: 'Supplies',
+		form: [{
+			id: 0,
+			title: 'Kindergarten',
+			src: 'docs/supply/Kindergarten_Supply_List_2015.pdf'
+		}, {
+			id: 1,
+			title: '2 Year Old Program',
+			src: 'docs/supply/PK_2_Supply_List_2015.pdf'
+		}, {
+			id: 2,
+			title: '3 Year Old Program',
+			src: 'docs/supply/PK_3_Supply_List_2015.pdf'
+		}, {
+			id: 3,
+			title: '4 Year Old Program',
+			src: 'docs/supply/PK_4_Supply_List_2015.pdf'
+		}, {
+			id: 4,
+			title: 'Summer Program',
+			src: 'docs/supply/SUMMER_SUPPLY_LIST.pdf'
+		}, {
+			id: 5,
+			title: 'Great Goodbyes',
+			src: 'docs/info/Great_Goodbyes.pdf'
+		}]
+	}, {
+		id: 4,
+		title: 'Employment',
+		form: [{
+			id: 0,
+			title: 'Employment Application',
+			src: 'docs/admin/Employment_Application.pdf'
+		}]
+	}]
+
+	return {
+		all: function () {
+			return sections;
+		},
+		remove: function (section) {
+			sections.splice(sections.indexOf(section), 1);
+		},
+		get: function (sectionId) {
+			for (var i = 0; i < sections.length; i++) {
+				if (sections[i].id === parseInt(sectionId)) {
+					return sections[i];
 				}
 			}
 			return null;

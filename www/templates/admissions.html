@@ -17,9 +17,9 @@
             An enrollment packet consists of the following documents:
           </div>
           <div class="list list-inset item-text-wrap">
-            <ion-item class="row" ng-repeat="admission in admissions">
+            <ion-item class="row" ng-class="{true: 'none', false: ''}[{{admission.id}} >= 4]" ng-repeat="admission in admissions">
               ​<span class="col">{{admission.id + 1}}</span>
-              <span class="col col-75">{{admission.text}}</span>
+              <a ng-href="{{admission.src}}" target="_blank" class="col col-75">{{admission.text}}</a>
             </ion-item>
           </div>
         </div>
@@ -42,45 +42,14 @@
     </div>
 
     <div class="list card">
-      <div class="item item-divider purple">
+      <div class="item item-divider item-text-wrap purple">
         What to bring for the first day:
       </div>
       <div class="item item-divider">
         <div class="list card list-inset">
-          <ion-item class="item item-text-wrap" ng-repeat="doc in docs">
+          <ion-item class="item item-text-wrap center" ng-repeat="doc in docs">
             {{doc.text}}
           </ion-item>
-        </div>
-      </div>
-    </div>
-
-    <div class="list card">
-      <div class="item item-icon-left item-divider purple">
-        <i class="icon ion-document-text"></i>
-        Admissions Forms
-      </div>
-      <div class="item item-divider">
-        <div class="list card list-inset">
-          <ul class="list">
-            <li class="item">
-              <a href="docs/admin/Enrollment_Agreement_2016-17.pdf" target="_blank">Enrollment Agreement Form</a>
-            </li>
-            <li class="item">
-              <a href="docs/admin/Registration_Form_2016-17.pdf" target="_blank">Registration Form</a>
-            </li>
-            <li class="item">
-              <a href="docs/health/Physical_Form.pdf" target="_blank">Physical Form</a>
-            </li>
-            <li class="item item-text-wrap">
-              <a href="docs/admin/Parent_Permission_and_Tuition_Agreement_2016-17.pdf" target="_blank">Parental Permission and Tuition Agreement</a>
-            </li>
-            <li class="item">
-              <a href="docs/admin/Summer_Selection_Sheet_2016.pdf" target="_blank">Summer Camp Selection Sheet</a>
-            </li>
-            <li class="item">
-              <a href="docs/info/WBA_Brochure.pdf" target="_blank">WBA Brochure</a>
-            </li>
-          </ul>
         </div>
       </div>
     </div>

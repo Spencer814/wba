@@ -21,8 +21,13 @@
 }
 
 ion-content,
+ion-view.pane,
 .orange {
 	background: #f78b20;
+}
+
+.center {
+	text-align: center;
 }
 
 .neutral {
@@ -39,13 +44,23 @@ ion-content,
 }
 
 .award {
-	width: 20%;
-	height: 20%;
+	width: 25%;
+	height: 25%;
 }
 
-.nope {
-	width: 15%;
-	height: 20%;
+.honors {
+	max-width: 70%;
+	margin: 0 auto;
+}
+
+.none {
+	pointer-events: none;
+	cursor: default;
+}
+
+.none .col-75 {
+    text-decoration: none;
+    color: inherit;
 }
 
 .brand {
@@ -87,4 +102,74 @@ ion-content,
 	background: #f78b20;
 	color: white;
 	text-shadow: 1px 1px 2px #000000, 0 0 25px #f78b20, 0 0 5px #fbbe82;
+}
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	ion-content {
+		padding: 0 15em;
+	}
+
+	.padding {
+		margin: 0 15em;
+	}
+
+	.neutral {
+		padding: 0;
+	}
+
+	.award {
+		width: 10%;
+		height: 10%;
+	}
+
+	.honors {
+		max-width: 30%;
+	}
+}
+
+ Medium Devices, Desktops 
+@media only screen and (min-width : 1600px) {
+	ion-content {
+		padding: 0 25em;
+	}
+
+	.padding {
+		margin: 0 25em;
+	}
+
+	.neutral {
+		padding: 0;
+	}
+
+	.award {
+		width: 5%;
+		height: 5%;
+	}
+
+	.honors {
+		max-width: 40%;
+	}
 }

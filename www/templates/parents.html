@@ -7,12 +7,12 @@
         Upcoming Events
       </div>
       <div class="item item-divider">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
           <ion-slide class="list card list-inset" ng-repeat="event in events">
             <div class="item item-divider green">
                 {{event.title}}
             </div>                    
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap center">
                 {{event.text}}
             </div>
           </ion-slide>
@@ -31,7 +31,7 @@
           <div class="item item-divider green">
             Current
           </div>
-          <div class="item">
+          <div class="item center">
             <a href="docs/news/Newsletter_Summer_2016.pdf" target="_blank"><b>Summer 2016</b></a>
           </div>
         </div>
@@ -41,7 +41,7 @@
             <div class="item item-divider green">
               Previous
             </div>
-            <div class="item">
+            <div class="item center">
               <a href="{{newsletter.src}}" target="_blank"><b>{{newsletter.title}}</b></a>
             </div>
           </ion-slide>
@@ -78,7 +78,7 @@
               Shutterfly Photo Website
             </div>
             <div class="item item-text-wrap">
-              Visit our website for uploading and sharing photos with each other. This site is accessible to members only. To join just visit <a href="#" onclick="window.open('http://westernbranchacademy.shutterfly.com/', '_system', 'location=yes');">westernbranchacademy.shutterfly.com</a> and request to become a member. You can upload, view, and order pictures from the website.
+              Visit our website for uploading and sharing photos with each other. This site is accessible to members only. To join just visit <a href="#" onclick="window.open('http://westernbranchacademy.shutterfly.com/', '_system', 'location=yes', 'toolbar=yes'); return false;">westernbranchacademy.shutterfly.com</a> and request to become a member. You can upload, view, and order pictures from the website.
             </div>
           </div>
 
@@ -97,11 +97,11 @@
             <div class="item item-divider green">
               {{extra.title}}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap center">
               <b>{{extra.day}}</b><br>{{extra.time}}
             </div>
-            <div class="item item-divider">
-              <a href="#" ng-click="window.open('http://{{extra.url}}/', '_system', 'location=yes', 'toolbar=yes');">{{extra.url}}</a>
+            <div class="item item-divider center">
+              <a href="{{extra.url}}" target="_blank" ng-click="window.open('{{extra.url}}', '_system', 'location=yes', 'toolbar=yes'); return false;">{{extra.site}}</a>
             </div>
           </ion-slide>
         </ion-slide-box>
