@@ -1,6 +1,6 @@
 angular.module('wbaApp.services', [])
 
-.factory('Photos', function() {
+.factory('Photos', function($firebaseArray) {
 
 	var photos = [{
 		id: 0,
@@ -19,6 +19,8 @@ angular.module('wbaApp.services', [])
 		src: 'img/IMG_7957.jpg'
 	}];
 
+	var photosRef = new Firebase("https://wba-app.firebaseio.com/photos");
+
 	return {
 		all: function () {
 			return photos;
@@ -34,10 +36,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(photosRef);
 	};
 })
 
-.factory('Bests', function() {
+.factory('Bests', function($firebaseArray) {
 
 	var bests = [{
 		id: 0,
@@ -62,6 +65,8 @@ angular.module('wbaApp.services', [])
 		src: 'img/best-of-2016.png'
 	}];
 
+	var bestsRef = new Firebase('https://wba-app.firebaseio.com/bests');
+
 	return {
 		all: function () {
 			return bests;
@@ -77,10 +82,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(bestsRef);
 	};
 })
 
-.factory('Values', function() {
+.factory('Values', function($firebaseArray) {
 
 	var values = [{
 		id: 0,
@@ -105,6 +111,8 @@ angular.module('wbaApp.services', [])
 		text: 'Meet the changing preschool educational needs of the community'
 	}];
 
+	var valuesRef = new Firebase('https://wba-app.firebaseio.com/values');
+
 	return {
 		all: function () {
 			return values;
@@ -120,10 +128,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(valuesRef);
 	};
 })
 
-.factory('Programs', function() {
+.factory('Programs', function($firebaseArray) {
 
 	var programs = [{
 		id: 0,
@@ -144,13 +153,15 @@ angular.module('wbaApp.services', [])
 		id: 3,
 		title: 'Kindergarten',
 		text: 'Our developmentally appropriate Kindergarten program equips children with the foundations of learning in math, science, literacy, handwriting, and social studies. Our small class size provides optimal one-on-one instruction and buiilds a unique classroom community.  We use the Pearson Reading Street and EnVision Math curriculums.',
-		img: 'img/crayon.svg'
+		img: 'icons/kindergarten.svg'
 	}, {
 		id: 4,
 		title: 'School Age',
 		text: 'Our school age program offers students a friendly and safe place for children to come together after school to work on homework, play, and build lasting friendships, Our school aligns with the Chesapeake school calendar and offers full day programming during teacher work days.  Pre-registration is required for teacher work days and limited space is available.  We serve Chittum Elementary, Western Branch Primary, and Western Branch Intermediate.',
-		img: 'img/school-bus.svg'
+		img: 'icons/bus.svg'
 	}];
+
+	var programsRef = new Firebase('https://wba-app.firebaseio.com/programs');
 
 	return {
 		all: function () {
@@ -167,10 +178,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(programsRef);
 	};
 })
 
-.factory('Persons', function () {
+.factory('Persons', function ($firebaseArray) {
 
 	var persons = [{
 		id: 0,
@@ -234,6 +246,8 @@ angular.module('wbaApp.services', [])
 		text: 'Jessica Breakfield graduated from Old Dominion University with a Masters in Education. She is licensed to teach preschool through sixth grade. She has worked at WBA in the summer since 2013 and she has previously taught in Suffolk Public Schools. Her patience and cheerful attitude will make her a wonderful Kindergarten teacher.'
 	}];
 
+	var personsRef = new Firebase('https://wba-app.firebaseio.com/persons');
+
 	return {
 		all: function () {
 			return persons;
@@ -249,10 +263,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(personsRef);
 	};
 })
 
-.factory('Admissions', function () {
+.factory('Admissions', function ($firebaseArray) {
 
 	var admissions = [{
 		id: 0,
@@ -288,6 +303,8 @@ angular.module('wbaApp.services', [])
 		src: '#'
 	}];
 
+	var admissionsRef = new Firebase('https://wba-app.firebaseio.com/admissions');
+
 	return {
 		all: function () {
 			return admissions;
@@ -303,10 +320,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(admissionsRef);
 	};
 })
 
-.factory('Docs', function () {
+.factory('Docs', function ($firebaseArray) {
 
 	var docs = [{
 		id: 0,
@@ -319,11 +337,13 @@ angular.module('wbaApp.services', [])
 		text: 'Tote bag'
 	}, {
 		id: 3,
-		text: 'Seasonal change of clothes with socks (Please place in labelled ziploc bag)'
+		text: 'Seasonal change of clothes with socks'
 	}, {
 		id: 4,
-		text: 'Nap mat and crib sheet (full days students)'
+		text: 'Nap mat and crib sheet (full day students)'
 	}];
+
+	var docsRef = new Firebase('https://wba-app.firebaseio.com/docs');
 
 	return {
 		all: function () {
@@ -340,10 +360,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(docsRef);
 	};
 })
 
-.factory('Events', function() {
+.factory('Events', function($firebaseArray) {
 
 	var events = [{
 		id: 0,
@@ -351,7 +372,7 @@ angular.module('wbaApp.services', [])
 		text: 'No camp - Happy 4th of July!'
 	}, {
 		id: 1,
-		title: 'August 29th - September 2nd',
+		title: 'August 29th\n - \nSeptember 2nd',
 		text: 'WBA closed'
 	}, {
 		id: 2,
@@ -366,6 +387,8 @@ angular.module('wbaApp.services', [])
 		title: 'September 6th',
 		text: '1st day of school'
 	}];
+
+	var eventsRef = new Firebase('https://wba-app.firebaseio.com/events');
 
 	return {
 		all: function () {
@@ -382,10 +405,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(eventsRef);
 	};
 })
 
-.factory('Newsletters', function() {
+.factory('Newsletters', function($firebaseArray) {
 
 	var newsletters = [{
 		id: 0,
@@ -425,6 +449,8 @@ angular.module('wbaApp.services', [])
 		src: 'docs/news/September_Newsletter_2015.pdf'
 	}];
 
+	var newslettersRef = new Firebase('https://wba-app.firebaseio.com/newsletters');
+
 	return {
 		all: function () {
 			return newsletters;
@@ -440,10 +466,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(newslettersRef);
 	};
 })
 
-.factory('Rules', function () {
+.factory('Rules', function ($firebaseArray) {
 
 	var rules = [{
 		id: 0,
@@ -465,12 +492,14 @@ angular.module('wbaApp.services', [])
 		text: 'All traffic must go around the circle in a counterclockwise direction.  Do not turn around and go against traffic.'
 	}];
 
+	var rulesRef = new Firebase('https://wba-app.firebaseio.com/rules');
+
 	return {
 		all: function () {
 			return rules;
 		},
 		remove: function (rule) {
-			rules.splice(persons.indexOf(rule), 1);
+			rules.splice(rules.indexOf(rule), 1);
 		},
 		get: function (ruleId) {
 			for (var i = 0; i < rules.length; i++) {
@@ -480,10 +509,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(rulesRef);
 	};
 })
 
-.factory('Extras', function() {
+.factory('Extras', function($firebaseArray) {
 
 	var extras = [{
 		id: 0,
@@ -508,6 +538,8 @@ angular.module('wbaApp.services', [])
 		url: 'http://funbuses.com/hamptonroads/'
 	}];
 
+	var extrasRef = new Firebase('https://wba-app.firebaseio.com/extras');
+
 	return {
 		all: function () {
 			return extras;
@@ -523,10 +555,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(extrasRef);
 	};
 })
 
-.factory('Forms', function () {
+.factory('Forms', function ($firebaseArray) {
 
 	var forms = [{
 		id: 0,
@@ -610,6 +643,8 @@ angular.module('wbaApp.services', [])
 		src: 'docs/admin/Employment_Application.pdf'
 	}];
 
+	var formsRef = new Firebase('https://wba-app.firebaseio.com/forms');
+
 	return {
 		all: function () {
 			return forms;
@@ -625,10 +660,11 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(formsRef);
 	};
 })
 
-.factory('Sections', function() {
+.factory('Sections', function($firebaseArray) {
 
 	var sections = [{
 		id: 1,
@@ -712,6 +748,8 @@ angular.module('wbaApp.services', [])
 		}]
 	}]
 
+	var sectionsRef = new Firebase('https://wba-app.firebaseio.com/sections');
+
 	return {
 		all: function () {
 			return sections;
@@ -727,5 +765,6 @@ angular.module('wbaApp.services', [])
 			}
 			return null;
 		}
+		// $firebaseArray(sectionsRef);
 	};
 });

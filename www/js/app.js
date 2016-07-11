@@ -1,4 +1,4 @@
-angular.module('wbaApp', ['ionic', 'wbaApp.controllers', 'wbaApp.services'])
+angular.module('wbaApp', ['ionic', 'wbaApp.controllers', 'wbaApp.services', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

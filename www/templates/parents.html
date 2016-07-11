@@ -9,7 +9,7 @@
       <div class="item item-divider">
         <ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
           <ion-slide class="list card list-inset" ng-repeat="event in events">
-            <div class="item item-divider green">
+            <div class="item item-divider item-text-wrap green">
                 {{event.title}}
             </div>                    
             <div class="item item-text-wrap center">
@@ -74,8 +74,8 @@
           </div>
 
           <div class="list card list-inset">
-            <div class="item item-divider green">
-              Shutterfly Photo Website
+            <div class="item item-divider item-text-wrap green">
+              Shutterfly
             </div>
             <div class="item item-text-wrap">
               Visit our website for uploading and sharing photos with each other. This site is accessible to members only. To join just visit <a href="#" onclick="window.open('http://westernbranchacademy.shutterfly.com/', '_system', 'location=yes', 'toolbar=yes'); return false;">westernbranchacademy.shutterfly.com</a> and request to become a member. You can upload, view, and order pictures from the website.
@@ -86,9 +86,8 @@
     </div>
 
     <div class="list card list-inset">
-      <div class="item item-divider purple">
+      <div class="item item-divider item-text-wrap purple">
         School Year PM Enrichment Classes
-        <span class="item-note">(Cost not included in WBA tuition)</span>
       </div>
       <div class="item item-divider">
 
@@ -101,7 +100,7 @@
               <b>{{extra.day}}</b><br>{{extra.time}}
             </div>
             <div class="item item-divider center">
-              <a href="{{extra.url}}" target="_blank" ng-click="window.open('{{extra.url}}', '_system', 'location=yes', 'toolbar=yes'); return false;">{{extra.site}}</a>
+              <a href="{{extra.url}}" target="_blank" ng-click="window.open('{{extra.url}}', '_system', 'location=yes', 'toolbar=yes');">{{extra.site}}</a>
             </div>
           </ion-slide>
         </ion-slide-box>

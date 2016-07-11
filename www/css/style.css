@@ -1,4 +1,15 @@
 @font-face {
+    font-family: 'bootstrap';
+    src:url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+    src:url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot') format('embedded-opentype'),
+        url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'),
+        url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+        url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'fontawesome';
     src:url('lib/font-awesome/fonts/fontawesome-webfont.eot');
     src:url('lib/font-awesome/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
@@ -20,110 +31,248 @@
     font-style: normal;
 }
 
-ion-content,
-ion-view.pane,
-.orange {
-	background: #f78b20;
-}
+@import 'https://fonts.googleapis.com/css?family=Bungee|Lato:400i|Open+Sans:600';
 
-.center {
-	text-align: center;
+.item {
+	font-family: 'Open Sans', sans-serif;
 }
-
-.neutral {
-	background: #332263;
-}
-
 .title {
-	color: white;
+	font-family: 'Bungee', cursive;
 }
 
-.pics {
-	max-width: 100%;
-	height: auto;
+.mdi::before {
+    font-size: 24px;
+    line-height: 14px;
 }
 
-.award {
-	width: 25%;
-	height: 25%;
+.btn .mdi::before {
+    position: relative;
+    top: 4px;
 }
 
-.honors {
-	max-width: 70%;
-	margin: 0 auto;
+.btn-xs .mdi::before {
+    font-size: 18px;
+    top: 3px;
 }
 
-.none {
-	pointer-events: none;
-	cursor: default;
+.btn-sm .mdi::before {
+    font-size: 18px;
+    top: 3px;
 }
 
-.none .col-75 {
+.dropdown-menu .mdi {
+    width: 18px;
+}
+
+.dropdown-menu .mdi::before {
+    position: relative;
+    top: 4px;
+    left: -8px;
+}
+
+.nav .mdi::before {
+    position: relative;
+    top: 4px;
+}
+
+.navbar .navbar-toggle .mdi::before {
+    position: relative;
+    top: 4px;
+    color: #FFF;
+}
+
+.breadcrumb .mdi::before {
+    position: relative;
+    top: 4px;
+}
+
+.breadcrumb a:hover {
     text-decoration: none;
-    color: inherit;
 }
 
-.brand {
-	height: 44;
-	display: block;
-    margin: 0 auto;
+.breadcrumb a:hover span {
+    text-decoration: underline;
 }
 
-.word {
-	font-weight: bold;
-	font-style: italic;
+.alert .mdi::before {
+    position: relative;
+    top: 4px;
+    margin-right: 2px;
 }
 
-.purple-text {
-	color: #332263;
+.input-group-addon .mdi::before {
+    position: relative;
+    top: 3px;
 }
 
-.purple {
-	background: #332263;
-	color: white;
-	text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
+.navbar-brand .mdi::before {
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
 }
 
-.green-text {
-	color: #b8d450;
+.list-group-item .mdi::before {
+    position: relative;
+    top: 3px;
+    left: -3px
 }
-
-.green {
-	background: #b8d450;
-	color: white;
-	text-shadow: 1px 1px 2px #000000, 0 0 25px #b8d450, 0 0 5px #809925;
-}
-
-.orange-text {
-	color: #f78b20;
-}
-
-.orange {
-	background: #f78b20;
-	color: white;
-	text-shadow: 1px 1px 2px #000000, 0 0 25px #f78b20, 0 0 5px #fbbe82;
-}
-
-/*==========  Mobile First Method  ==========*/
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
-    
+	ion-content,
+	ion-view.pane,
+	.orange {
+		background: #f78b20;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.row {
+		vertical-align: middle;
+		padding: 0;
+	}
+
+	.neutral {
+		background: #332263;
+	}
+
+	.title {
+		color: white;
+	}
+
+	.pics {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.award {
+		width: 35%;
+		padding: 0;
+	}
+
+	.honors {
+		max-width: 70%;
+		margin: 0 auto;
+	}
+
+	.none {
+		pointer-events: none;
+		cursor: default;
+	}
+
+	.none .col-75 {
+	    text-decoration: none;
+	    color: inherit;
+	}
+
+	.brand {
+		height: 44;
+		display: block;
+	    margin: 0 auto;
+	}
+
+	.word {
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	.purple-text {
+		color: #332263;
+		font-family: 'Lato', sans-serif;
+	}
+
+	.purple {
+		background: #332263;
+		color: white;
+		text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
+		font-family: 'Bungee', cursive;
+	}
+
+	.green-text {
+		color: #b8d450;
+		font-family: 'Lato', sans-serif;
+	}
+
+	.green {
+		background: #b8d450;
+		color: white;
+		text-shadow: 1px 1px 2px #000000, 0 0 25px #b8d450, 0 0 5px #809925;
+		font-family: 'Bungee', cursive;
+	}
+
+	.orange-text {
+		color: #f78b20;
+		font-family: 'Lato', sans-serif;
+	}
+
+	.orange {
+		background: #f78b20;
+		color: white;
+		text-shadow: 1px 1px 2px #000000, 0 0 25px #f78b20, 0 0 5px #fbbe82;
+	}
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
+	ion-content {
+		padding: 0 2em;
+	}
 
+	.padding {
+		margin: 0 2em;
+	}
+
+	.neutral {
+		padding: 0;
+	}
+
+	.award {
+		width: 25%;
+	}
+
+	.honors {
+		max-width: 50%;
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
+	ion-content {
+		padding: 0 5em;
+	}
 
+	.padding {
+		margin: 0 5em;
+	}
+
+	.neutral {
+		padding: 0;
+	}
+
+	.award {
+		width: 20%;
+	}
+
+	.honors {
+		max-width: 40%;
+	}
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
+	ion-content {
+		padding: 0 10em;
+	}
 
+	.padding {
+		margin: 0 10em;
+	}
+
+	.neutral {
+		padding: 0;
+	}
 }
 
 /* Large Devices, Wide Screens */
@@ -139,15 +288,6 @@ ion-view.pane,
 	.neutral {
 		padding: 0;
 	}
-
-	.award {
-		width: 10%;
-		height: 10%;
-	}
-
-	.honors {
-		max-width: 30%;
-	}
 }
 
  Medium Devices, Desktops 
@@ -162,14 +302,5 @@ ion-view.pane,
 
 	.neutral {
 		padding: 0;
-	}
-
-	.award {
-		width: 5%;
-		height: 5%;
-	}
-
-	.honors {
-		max-width: 40%;
 	}
 }

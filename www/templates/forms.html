@@ -9,7 +9,8 @@
         <ion-list>
           <div class="list card list-inset">
             <div class="item item-divider green"></div>
-            <ion-item class="item item-text-wrap center" ng-repeat="section in sections" href="#/wba/forms/{{section.id}}">
+            <ion-item ng-repeat="section in sections" class="item item-text-wrap item-icon-right center" href="#/wba/forms/{{section.id}}">
+              <i class="icon ion-chevron-right icon-accessory"></i>
               {{section.title}}
             </ion-item>
           </div>
