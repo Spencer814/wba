@@ -8,7 +8,7 @@
 				<ion-list>
 					<div class="list card list-inset">
 						<div class="item item-divider green"></div>
-						<ion-item class="item item-avatar item-icon-right" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}">
+						<ion-item class="item item-avatar item-icon-right" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}" ng-style="set_color(program)">
 							<img class="pics" ng-src="{{program.img}}">
 							{{program.title}}
 							<i class="icon ion-chevron-right icon-accessory"></i>
