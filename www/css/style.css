@@ -33,10 +33,102 @@
 
 @import 'https://fonts.googleapis.com/css?family=Bungee|Lato:400i|Open+Sans:600';
 
-.item {
-	font-family: 'Open Sans', sans-serif;
+.title.title-left.header-item {
+	left: 0px !important;
 }
-.title {
+
+.title.title-left,
+.bar .title.title-left {
+	text-align: center;
+}
+
+.platform-android .bar .title {
+	font-size: 17px;
+}
+
+ion-header-bar.bar-stable.bar.bar-header {
+	background: #d0c6eb;
+}
+
+.title.title-center.header-item,
+.title.title-left.header-item,
+button.button.button-icon.button-clear.ion-navicon,
+button.button.back-button.buttons.button-clear.header-item {
+	color: white;
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
+	font-family: 'Bungee', cursive;
+}
+
+.card {
+	box-shadow: none;
+	background: inherit;
+	padding: 0;
+}
+
+.panel {
+	border-radius: 8px;
+	margin-bottom: 0;
+	box-shadow: inset 0px 0px 5px -1px #696969, 0px 2px 10px -1px #1A3B4C;
+}
+
+.panel-body {
+	border-radius: 8px;
+}
+
+.panel-primary > .panel-heading {
+	background: #332263;
+	color: #fff;
+	border-color: #332263;
+}
+
+.panel-primary {
+	border-color: #332263;
+	background: #332263;
+	border: 2px solid #332263;
+}
+
+.panel-primary.panel-body.item-divider {
+	padding-top: 0;
+}
+
+.panel-success > .panel-heading {
+	background: #b8d450;
+	color: #fff;
+	border-color: #b8d450;
+}
+
+.panel-success {
+	border-color: #b8d450;
+}
+
+.panel.panel-success {
+	margin-top: 1em;
+}
+
+.panel-warning > .panel-heading {
+	background: #f78b20;
+	color: #fff;
+	border-color: #f78b20;
+}
+
+.panel-warning {
+	border-color: #f78b20;
+}
+
+.item {
+	font-family: inherit;
+	background: inherit;
+	color: inherit;
+  border-color: rgba(221, 221, 221, 0);
+}
+
+.item-icon-left {
+	padding: 0 3em;
+}
+
+.title,
+.previous-title {
 	font-family: 'Bungee', cursive;
 }
 
@@ -117,12 +209,24 @@
     left: -3px
 }
 
+.col {
+	text-align: center;
+}
+
+.col-75 {
+	text-align: left;
+}
+
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
 	ion-content,
 	ion-view.pane,
 	.orange {
-		background: #f78b20;
+		background: #fcd9b6;
+	}
+
+	.item-divider {
+		background: #efecf8;
 	}
 
 	.center {
@@ -135,7 +239,7 @@
 	}
 
 	.neutral {
-		background: #332263;
+		background: #d0c6eb;
 	}
 
 	.title {
@@ -145,6 +249,8 @@
 	.pics {
 		max-width: 100%;
 		height: auto;
+		border-radius: 10px;
+		box-shadow: inset 0px 0px 5px -1px #696969, 0px 2px 10px -1px #1A3B4C;
 	}
 
 	.award {
@@ -211,6 +317,10 @@
 		background: #f78b20;
 		color: white;
 		text-shadow: 1px 1px 2px #000000, 0 0 25px #f78b20, 0 0 5px #fbbe82;
+	}
+
+	.item-note {
+		font-family: 'Lato', sans-serif;
 	}
 }
 

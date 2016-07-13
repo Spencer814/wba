@@ -1,19 +1,23 @@
 <ion-view view-title="{{section.title}}">
 	<ion-content>
-		<div class="list card list-inset">
-      <div class="item item-icon-left item-divider purple">
-        <i class="icon ion-document-text"></i>
-        {{section.title}}
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        <div class="item item-icon-left">
+          <i class="icon ion-document-text"></i>
+          {{section.title}}
+        </div>
       </div>
-      <div class="item item-divider">
-        <ion-list>
-          <div class="list card list-inset">
-            <div class="item item-divider green"></div>
-            <ion-item ng-repeat="title in section.form" class="item item-text-wrap center">
-              <a href="{{title.src}}" target="_blank">{{title.title}}</a>
-            </ion-item>
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green"></div>
+          <div class="panel-body">
+            <ion-list>
+              <ion-item ng-repeat="title in section.form" class="item item-text-wrap center">
+                <a href="{{title.src}}" target="_blank" ng-click="openPDF()">{{title.title}}</a>
+              </ion-item>
+            </ion-list>
           </div>
-        </ion-list>
+        </div>
       </div>
     </div>
 	</ion-content>

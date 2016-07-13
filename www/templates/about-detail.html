@@ -1,13 +1,15 @@
 <ion-view view-title="Staff">
 	<ion-content>
-		<div class="list card">
-			<div class="item item-divider item-text-wrap purple">
+		<div class="card panel panel-primary">
+			<div class="panel-heading purple">
 				{{person.name}}
 			</div>
-			<div class="item item-divider item-text-wrap">
-				{{person.title}}
-				<div class="list card list-inset">
-					<div class="item item-text-wrap">
+			<div class="panel-primary panel-body item-divider">
+				<div class="panel panel-success">
+					<div class="panel-heading green">					
+						{{person.title}}
+					</div>
+					<div class="panel-body">
 						{{person.text}}
 					</div>
 				</div>

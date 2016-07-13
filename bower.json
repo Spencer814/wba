@@ -31,7 +31,8 @@
     "bootstrap": "3.3.6",
     "font-awesome": "4.6.3",
     "jquery": "3.0.0",
-    "mdi": "1.6.50"
+    "mdi": "1.6.50",
+    "angularfire": "^2.0.1"
   },
   "resolutions": {
     "angular-animate": "1.5.7",

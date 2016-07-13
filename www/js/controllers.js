@@ -78,11 +78,13 @@ angular.module('wbaApp.controllers', [])
 	$scope.person = Persons.get($stateParams.personId);
 })
 
-.controller('ProgramsCtrl', function($scope, Programs) {
+.controller('ProgramsCtrl', function($scope, Programs, Extras) {
 	$scope.programs = Programs.all();
+	$scope.extras = Extras.all();
 
-	$scope.remove = function(program) {
+	$scope.remove = function(program, extras) {
 		Programs.remove(program);
+		Extras.remove(extra);
 	};
 })
 
@@ -100,17 +102,15 @@ angular.module('wbaApp.controllers', [])
 	};	
 })
 
-.controller('ParentsCtrl', function($scope, Events, Newsletters, Rules, Extras) {
+.controller('ParentsCtrl', function($scope, Events, Newsletters, Rules) {
 	$scope.events = Events.all();
 	$scope.newsletters = Newsletters.all();
 	$scope.rules = Rules.all();
-	$scope.extras = Extras.all();
 
-	$scope.remove = function(event, newsletter, rules, extras) {
+	$scope.remove = function(event, newsletter, rules) {
 		Events.remove(event);
 		Newsletters.remove(newsletter);
 		Rules.remove(rule);
-		Extras.remove(extra);
 	};
 })
 
