@@ -1,64 +1,60 @@
 <ion-view view-title="About Us">
 	<ion-content>
-
-		<div class="list card list-inset">
-			<div class="item item-divider purple">
+		<div class="card panel panel-primary">
+			<div class="panel-heading purple">
 				About Us
 			</div>
-
-			<div class="item item-divider">
-				<div class="card">
-					<div class="item item-divider green"></div>
-					<div class="item item-text-wrap">
+			<div class="panel-primary panel-body item-divider">
+				<div class="panel panel-success">
+					<div class="panel-heading green"></div>
+					<div class="panel-body">
 						Western Branch Academy is a full-day nationally accredited early childhood program that provides innovative programming for children where emotional, physical, intellectual, spiritual, and social development flourishes. We are committed to providing high quality instruction through age-appropriate learning activities and qualified teachers.
 					</div>
 				</div>
-
-				<div class="card">
-					<div class="item item-divider green">
+				<div class="panel panel-success">
+					<div class="panel-heading green">
 						We strive to:
 					</div>
-					<ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
-						<ion-slide class="item item-text-wrap center" ng-repeat="value in values">
-							{{value.text}}
-						</ion-slide>
-					</ion-slide-box>
+					<div class="panel-body">
+						<ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
+							<ion-slide class="item center" ng-repeat="value in values">
+								{{value.text}}
+							</ion-slide>
+						</ion-slide-box>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="list card list-inset">
-			<div class="item item-divider purple">
+		<div class="card panel panel-primary">
+			<div class="panel-heading purple">
 				Our Staff
 			</div>
-			<div class="item item-divider">
-
-				<div class="card">
-					<div class="item item-divider green"></div>
-					<div class="list list-inset center">
+			<div class="panel-primary panel-body item-divider">
+				<div class="panel panel-success">
+					<div class="panel-heading green"></div>
+					<div class="panel-body center">
 						<img class="pics" src="img/Staff--element134.jpg">
 					</div>
-					<div class="item item-inset item-text-wrap">
+					<div class="panel-body">
 						Teachers makes a huge impact on the lives of young children and their families.  ​We strive to be a team-oriented environment that encourages professional development in one another while building strong relationships with one another.  All of our preschool teachers hold a college degree and have early childhood classroom experience.  We strive to provide high quality educational programming at Western Branch Academy.
 					</div>
 				</div>
-
-				<ion-list>
-					<div class="list card list-inset">
-						<div class="item item-divider item-text-wrap green">
-							Introducing our talented team members:
-						</div>
-						<ion-item class="item item-text-wrap item-icon-right center" ng-repeat="person in persons" type="item-text-wrap" href="#/wba/about/{{person.id}}">
-							{{person.name}}
-							<p>{{person.title}}</p>
-							<i class="icon ion-chevron-right icon-accessory"></i>
-							<ion-option-button class="button-assertive" ng-click="remove(person)">
-							</ion-option-button>
-						</ion-item>
+				<div class="panel panel-success">
+					<div class="panel-heading green">
+						Introducing our talented team members:
 					</div>
-				</ion-list>
+					<div class="panel-body center">
+						<ion-list>
+							<ion-item class="item item-icon-right" ng-repeat="person in persons" href="#/wba/about/{{person.id}}">
+								{{person.name}}
+								<p>{{person.title}}</p>
+								<i class="icon ion-chevron-right icon-accessory"></i>
+								<ion-option-button class="button-assertive" ng-click="remove(person)"></ion-option-button>
+							</ion-item>
+						</ion-list>
+					</div>
+				</div>
 			</div>
 		</div>
-
 	</ion-content>
 </ion-view>

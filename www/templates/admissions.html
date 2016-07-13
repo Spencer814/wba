@@ -1,58 +1,58 @@
 <ion-view view-title="Admissions">
   <ion-content>
-
-    <div class="list card">
-      <div class="item item-divider item-text-wrap purple">
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
         Please call to schedule a tour
       </div>
-      <div class="item item-text-wrap">
-        To enroll at Western Branch Academy a complete application packet must be submitted. Fall class assignment is based upon your child's age as of September 30, 2016. Summer class assignment is based upon your child's age as of June 2016. Children must be two by June 20th to enroll for Summer Camp.
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider item-text-wrap purple"></div>
-      <div class="item item-divider">
-        <div class="list card list-inset">
-          <div class="item item-divider item-text-wrap green">
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green"></div>
+          <div class="panel-body">
+            To enroll at Western Branch Academy a complete application packet must be submitted. Fall class assignment is based upon your child's age as of September 30, 2016. Summer class assignment is based upon your child's age as of June 2016. Children must be two by June 20th to enroll for Summer Camp.
+          </div>
+        </div>
+        <div class="panel panel-success">
+          <div class="panel-heading green">
             An enrollment packet consists of the following documents:
           </div>
-          <div class="list list-inset item-text-wrap">
+          <div class="panel-body">
             <ion-item class="row" ng-class="{true: 'none', false: ''}[{{admission.id}} >= 4]" ng-repeat="admission in admissions">
               ​<span class="col">{{admission.id + 1}}</span>
               <a ng-href="{{admission.src}}" target="_blank" class="col col-75">{{admission.text}}</a>
             </ion-item>
           </div>
         </div>
-        <div class="list card list-inset">
-          <div class="item item-divider green">
+        <div class="panel panel-success">
+          <div class="panel-heading green">
             Discounts Available:
           </div>
-          <div class="list list-inset item-text-wrap">
-            <div class="item row">
-              ​<div class="col">1.</div>
-              <div class="col col-75">$10 Off Registration Fee (1st Child Only) when signing up for summer and fall at the same time</div>
+          <div class="panel-body">
+            <div class="row">
+              ​<span class="col">1.</span>
+              <span class="col col-75">$10 Off Registration Fee (1st Child Only) when signing up for summer and fall at the same time</span>
             </div>
-            <div class="item row">
-              <div class="col">2.</div>
-              <div class="col col-75">2% discount given for tuition payments paying by Automatic (ACH) payments, monthly payments, or for the year in full</div>
+            <div class="row">
+              <span class="col">2.</span>
+              <span class="col col-75">2% discount given for tuition payments paying by Automatic (ACH) payments, monthly payments, or for the year in full</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="list card">
-      <div class="item item-divider item-text-wrap purple">
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
         What to bring for the first day:
       </div>
-      <div class="item item-divider">
-        <div class="list card list-inset">
-          <ion-item class="item item-text-wrap center" ng-repeat="doc in docs">
-            {{doc.text}}
-          </ion-item>
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green"></div>
+          <div class="panel-body center">
+            <ion-item ng-repeat="doc in docs">
+              {{doc.text}}
+            </ion-item>
+          </div>
         </div>
       </div>
     </div>
-
   </ion-content>
 </ion-view>

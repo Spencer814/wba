@@ -1,21 +1,48 @@
 <ion-view view-title="Programs">
-	<ion-content>
-		<div class="list card list-inset">
-			<div class="item item-divider purple">
-				Our Programs
-			</div>
-			<div class="item item-divider center">
-				<ion-list>
-					<div class="list card list-inset">
-						<div class="item item-divider green"></div>
-						<ion-item class="item item-avatar item-icon-right" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}" ng-style="set_color(program)">
-							<img class="pics" ng-src="{{program.img}}">
-							{{program.title}}
-							<i class="icon ion-chevron-right icon-accessory"></i>
-						</ion-item>
-					</div>
-				</ion-list>
-			</div>
-		</div>
-	</ion-content>
+  <ion-content>
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        Our Programs
+      </div>
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green"></div>
+          <div class="panel-body">
+            <ion-list>
+              <ion-item class="item item-avatar item-icon-right center" ng-repeat="program in programs" href="#/wba/programs/{{program.id}}" ng-style="set_color(program)">
+                <img class="pics" ng-src="{{program.img}}">
+                {{program.title}}
+                <i class="icon ion-chevron-right icon-accessory"></i>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        School Year PM Enrichment Classes
+      </div>
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <ion-slide-box does-continue="true" show-pager="false" on-slide-changed="slideHasChanged($index)">
+            <ion-slide ng-repeat="extra in extras">
+              <div class="panel-heading green">
+                {{extra.title}}
+                <span class="item-note">(swipe for more)</span>
+              </div>
+              <div class="panel-body center">
+                <b>{{extra.day}}</b><br>{{extra.time}}
+              </div>
+              <div class="panel-body center">
+                <div class="panel panel-footer">
+                  <a href="{{extra.url}}" target="_blank" ng-click="window.open('{{extra.url}}', '_system', 'location=yes', 'toolbar=yes');">{{extra.site}}</a>
+                </div>
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+        </div>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

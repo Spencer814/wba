@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Western Branch Academy mobile and web app.",
   "dependencies": {
+    "angularfire": "^2.0.1",
     "async": "^2.0.0-rc.6",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",

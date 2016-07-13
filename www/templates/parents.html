@@ -1,112 +1,91 @@
 <ion-view view-title="Parents">
   <ion-content class="padding">
-
-    <div class="list card list-inset">
-      <div class="item item-icon-left item-divider purple">
-        <i class="icon ion-ios-calendar"></i>
-        Upcoming Events
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        <div class="item item-icon-left">
+          <i class="icon ion-ios-calendar"></i>
+          Upcoming Events
+        </div>
       </div>
-      <div class="item item-divider">
-        <ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
-          <ion-slide class="list card list-inset" ng-repeat="event in events">
-            <div class="item item-divider item-text-wrap green">
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <ion-slide-box does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" show-pager="false">
+            <ion-slide ng-repeat="event in events">
+              <div class="panel-heading green">
                 {{event.title}}
-            </div>                    
-            <div class="item item-text-wrap center">
+              </div> 
+              <div class="panel-body center">
                 {{event.text}}
-            </div>
-          </ion-slide>
-        </ion-slide-box>
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+        </div>
       </div>
     </div>
-
-    <div class="list card list-inset">
-      <div class="item item-icon-left item-divider purple">
-        <i class="icon ion-document-text"></i>
-        Newsletter
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        <div class="item item-icon-left">
+          <i class="icon ion-document-text"></i>
+          Newsletter
+        </div>
       </div>
-      <div class="item item-divider item-text-wrap">
-
-        <div class="card">
-          <div class="item item-divider green">
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green">
             Current
           </div>
-          <div class="item center">
+          <div class="panel-body center">
             <a href="docs/news/Newsletter_Summer_2016.pdf" target="_blank"><b>Summer 2016</b></a>
           </div>
         </div>
-
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-          <ion-slide class="list card list-inset" ng-repeat="newsletter in newsletters">
-            <div class="item item-divider green">
-              Previous
-            </div>
-            <div class="item center">
-              <a href="{{newsletter.src}}" target="_blank"><b>{{newsletter.title}}</b></a>
-            </div>
-          </ion-slide>
-        </ion-slide-box>
-
+        <div class="panel panel-success">
+          <ion-slide-box does-continue="true" show-pager="false" on-slide-changed="slideHasChanged($index)">
+            <ion-slide ng-repeat="newsletter in newsletters">
+              <div class="panel-heading green">
+                Previous
+                <span class="item-note">(swipe for more)</span>
+              </div>
+              <div class="panel-body center">
+                <a href="{{newsletter.src}}" target="_blank"><b>{{newsletter.title}}</b></a>
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+        </div>
       </div>
     </div>
-
-    <div class="list card list-inset">
-      <div class="item item-icon-left item-divider purple">
-        <i class="icon ion-speakerphone"></i>Announcements
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        <div class="item item-icon-left">
+          <i class="icon ion-speakerphone"></i>
+          Announcements
+        </div>
       </div>
-      <div class="item item-divider">
-
-          <div class="card">
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green">
+            Carpool Etiquette
+          </div>
+          <div class="panel-body">
+            To keep our children safe at pick-up and drop-off please follow these guidelines:
+          </div>
+          <div class="panel-body">
             <ion-list>
-              <div class="item item-divider green">
-                Carpool Etiquette
-              </div>
-              <div class="item item-text-wrap">
-                To keep our children safe at pick-up and drop-off please follow these guidelines:
-                <br>
-                <br>
-                <ion-item class="row" ng-repeat="rule in rules">
-                    ​<span class="col">{{rule.id + 1}}</span>
-                    <span class="col col-75">{{rule.text}}</span>
-                </ion-item>
-              </div>
+              <ion-item class="row" ng-repeat="rule in rules">
+                ​<span class="col center">{{rule.id + 1}}</span>
+                <span class="col col-75">{{rule.text}}</span>
+              </ion-item>
             </ion-list>
           </div>
-
-          <div class="list card list-inset">
-            <div class="item item-divider item-text-wrap green">
-              Shutterfly
-            </div>
-            <div class="item item-text-wrap">
-              Visit our website for uploading and sharing photos with each other. This site is accessible to members only. To join just visit <a href="#" onclick="window.open('http://westernbranchacademy.shutterfly.com/', '_system', 'location=yes', 'toolbar=yes'); return false;">westernbranchacademy.shutterfly.com</a> and request to become a member. You can upload, view, and order pictures from the website.
-            </div>
+        </div>
+        <div class="panel panel-success">
+          <div class="panel-heading green">
+            Shutterfly
           </div>
-
+          <div class="panel-body">
+            Visit our website for uploading and sharing photos with each other. This site is accessible to members only. To join just visit <a href="#" onclick="window.open('http://westernbranchacademy.shutterfly.com/', '_system', 'location=yes', 'toolbar=yes'); return false;">westernbranchacademy.shutterfly.com</a> and request to become a member. You can upload, view, and order pictures from the website.
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="list card list-inset">
-      <div class="item item-divider item-text-wrap purple">
-        School Year PM Enrichment Classes
-      </div>
-      <div class="item item-divider">
-
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-          <ion-slide class="list card list-inset" ng-repeat="extra in extras">
-            <div class="item item-divider green">
-              {{extra.title}}
-            </div>
-            <div class="item item-text-wrap center">
-              <b>{{extra.day}}</b><br>{{extra.time}}
-            </div>
-            <div class="item item-divider center">
-              <a href="{{extra.url}}" target="_blank" ng-click="window.open('{{extra.url}}', '_system', 'location=yes', 'toolbar=yes');">{{extra.site}}</a>
-            </div>
-          </ion-slide>
-        </ion-slide-box>
-
-      </div>
-    </div>
-
   </ion-content>
 </ion-view>

@@ -1,20 +1,24 @@
 <ion-view view-title="Forms">
   <ion-content>
-    <div class="list card list-inset">
-      <div class="item item-icon-left item-divider purple">
-        <i class="icon ion-document-text"></i>
-        Additional Forms
+    <div class="card panel panel-primary">
+      <div class="panel-heading purple">
+        <div class="item item-icon-left">
+          <i class="icon ion-document-text"></i>
+          Additional Forms
+        </div>
       </div>
-      <div class="item item-divider">
-        <ion-list>
-          <div class="list card list-inset">
-            <div class="item item-divider green"></div>
-            <ion-item ng-repeat="section in sections" class="item item-text-wrap item-icon-right center" href="#/wba/forms/{{section.id}}">
-              <i class="icon ion-chevron-right icon-accessory"></i>
-              {{section.title}}
-            </ion-item>
+      <div class="panel-primary panel-body item-divider">
+        <div class="panel panel-success">
+          <div class="panel-heading green"></div>
+          <div class="panel-body">
+            <ion-list>
+              <ion-item ng-repeat="section in sections" class="item item-icon-right center" href="#/wba/forms/{{section.id}}">
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                {{section.title}}
+              </ion-item>
+            </ion-list>
           </div>
-        </ion-list>
+        </div>
       </div>
     </div>
   </ion-content>
