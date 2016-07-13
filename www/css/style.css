@@ -66,6 +66,10 @@ button.button.back-button.buttons.button-clear.header-item {
 	padding: 0;
 }
 
+.list-inset {
+	background: inherit;
+}
+
 .panel {
 	border-radius: 8px;
 	margin-bottom: 0;
