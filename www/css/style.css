@@ -67,7 +67,7 @@ button.button.back-button.buttons.button-clear.header-item {
 }
 
 .list-inset {
-	background: inherit;
+	background: inherit !important;
 }
 
 .panel {
