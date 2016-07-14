@@ -1,3 +1,13 @@
+@color_1: #ffffff;
+@color_2: inherit;
+@color_3: #332263;
+@color_4: #b8d450;
+@color_5: #f78b20;
+@font-family_1: 'Open Sans', sans-serif;
+@font-family_2: 'Bungee', cursive;
+@font-family_3: inherit;
+@font-family_4: 'Lato', sans-serif;
+
 @font-face {
   font-family: 'bootstrap';
   src: url('lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
@@ -117,44 +127,50 @@
 }
 @media only screen and (min-width: 320px) {
   .html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: @font-family_1;
   }
   .title.title-left.header-item {
     left: 0px !important;
-    color: #ffffff;
+    color: @color_1;
     vertical-align: middle;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
   .title.title-left {
     text-align: center;
   }
-  .bar .title.title-left {
-    text-align: center;
+  .bar {
+    .title.title-left {
+      text-align: center;
+    }
   }
-  .platform-android .bar .title {
-    font-size: 17px;
+  .platform-android {
+    .bar {
+      .title {
+        font-size: 17px;
+      }
+    }
   }
   ion-header-bar.bar-stable.bar.bar-header {
     background: #d0c6eb;
   }
   .title.title-center.header-item {
-    color: #ffffff;
+    color: @color_1;
     vertical-align: middle;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
   button.button.button-icon.button-clear.ion-navicon {
-    color: #ffffff;
+    color: @color_1;
     vertical-align: middle;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
   button.button.back-button.buttons.button-clear.header-item {
-    color: #ffffff;
+    color: @color_1;
     vertical-align: middle;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
   .card {
     box-shadow: none;
@@ -176,111 +192,159 @@
     border-color: #332263;
     background: #332263;
     border: 2px solid #332263;
-  }
-  .panel-primary > .panel-heading {
-    background: #332263;
-    color: #ffffff;
-    border-color: #332263;
+    >.panel-heading {
+      background: #332263;
+      color: @color_1;
+      border-color: #332263;
+    }
   }
   .panel-primary.panel-body.item-divider {
     padding-top: 0;
   }
   .panel-success {
     border-color: #b8d450;
-  }
-  .panel-success > .panel-heading {
-    background: #b8d450;
-    color: #ffffff;
-    border-color: #b8d450;
+    >.panel-heading {
+      background: #b8d450;
+      color: @color_1;
+      border-color: #b8d450;
+    }
   }
   .panel.panel-success {
     margin-top: 1em;
   }
   .panel-warning {
     border-color: #f78b20;
-  }
-  .panel-warning > .panel-heading {
-    background: #f78b20;
-    color: #ffffff;
-    border-color: #f78b20;
+    >.panel-heading {
+      background: #f78b20;
+      color: @color_1;
+      border-color: #f78b20;
+    }
   }
   .item {
-    font-family: inherit;
+    font-family: @font-family_3;
     background: inherit;
-    color: inherit;
+    color: @color_2;
     border-color: rgba(221, 221, 221, 0);
   }
   .item-icon-left {
     padding: 0 3em;
   }
   .title {
-    font-family: 'Bungee', cursive;
-    color: #ffffff;
+    font-family: @font-family_2;
+    color: @color_1;
   }
   .previous-title {
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
-  .mdi::before {
-    font-size: 24px;
-    line-height: 14px;
+  .mdi {
+    &::before {
+      font-size: 24px;
+      line-height: 14px;
+    }
   }
-  .btn .mdi::before {
-    position: relative;
-    top: 4px;
+  .btn {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 4px;
+      }
+    }
   }
-  .btn-xs .mdi::before {
-    font-size: 18px;
-    top: 3px;
+  .btn-xs {
+    .mdi {
+      &::before {
+        font-size: 18px;
+        top: 3px;
+      }
+    }
   }
-  .btn-sm .mdi::before {
-    font-size: 18px;
-    top: 3px;
+  .btn-sm {
+    .mdi {
+      &::before {
+        font-size: 18px;
+        top: 3px;
+      }
+    }
   }
-  .dropdown-menu .mdi {
-    width: 18px;
+  .dropdown-menu {
+    .mdi {
+      width: 18px;
+      &::before {
+        position: relative;
+        top: 4px;
+        left: -8px;
+      }
+    }
   }
-  .dropdown-menu .mdi::before {
-    position: relative;
-    top: 4px;
-    left: -8px;
+  .nav {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 4px;
+      }
+    }
   }
-  .nav .mdi::before {
-    position: relative;
-    top: 4px;
+  .navbar {
+    .navbar-toggle {
+      .mdi {
+        &::before {
+          position: relative;
+          top: 4px;
+          color: @color_1;
+        }
+      }
+    }
   }
-  .navbar .navbar-toggle .mdi::before {
-    position: relative;
-    top: 4px;
-    color: #ffffff;
+  .breadcrumb {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 4px;
+      }
+    }
+    a {
+      &:hover {
+        text-decoration: none;
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
   }
-  .breadcrumb .mdi::before {
-    position: relative;
-    top: 4px;
+  .alert {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 4px;
+        margin-right: 2px;
+      }
+    }
   }
-  .breadcrumb a:hover {
-    text-decoration: none;
+  .input-group-addon {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 3px;
+      }
+    }
   }
-  .breadcrumb a:hover span {
-    text-decoration: underline;
+  .navbar-brand {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 2px;
+        margin-right: 2px;
+      }
+    }
   }
-  .alert .mdi::before {
-    position: relative;
-    top: 4px;
-    margin-right: 2px;
-  }
-  .input-group-addon .mdi::before {
-    position: relative;
-    top: 3px;
-  }
-  .navbar-brand .mdi::before {
-    position: relative;
-    top: 2px;
-    margin-right: 2px;
-  }
-  .list-group-item .mdi::before {
-    position: relative;
-    top: 3px;
-    left: -3px;
+  .list-group-item {
+    .mdi {
+      &::before {
+        position: relative;
+        top: 3px;
+        left: -3px;
+      }
+    }
   }
   .col {
     text-align: center;
@@ -297,7 +361,7 @@
   .orange {
     background: #fcd9b6;
     background: #f78b20;
-    color: #ffffff;
+    color: @color_1;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #f78b20, 0 0 5px #fbbe82;
   }
   .item-divider {
@@ -330,10 +394,10 @@
   .none {
     pointer-events: none;
     cursor: default;
-  }
-  .none .col-75 {
-    text-decoration: none;
-    color: inherit;
+    .col-75 {
+      text-decoration: none;
+      color: @color_2;
+    }
   }
   .brand {
     height: 44;
@@ -345,31 +409,31 @@
     font-style: italic;
   }
   .purple-text {
-    color: #332263;
-    font-family: 'Lato', sans-serif;
+    color: @color_3;
+    font-family: @font-family_4;
   }
   .purple {
     background: #332263;
-    color: #ffffff;
+    color: @color_1;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #332263, 0 0 5px #5a3caf;
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
   .green-text {
-    color: #b8d450;
-    font-family: 'Lato', sans-serif;
+    color: @color_4;
+    font-family: @font-family_4;
   }
   .green {
     background: #b8d450;
-    color: #ffffff;
+    color: @color_1;
     text-shadow: 1px 1px 2px #000000, 0 0 25px #b8d450, 0 0 5px #809925;
-    font-family: 'Bungee', cursive;
+    font-family: @font-family_2;
   }
   .orange-text {
-    color: #f78b20;
-    font-family: 'Lato', sans-serif;
+    color: @color_5;
+    font-family: @font-family_4;
   }
   .item-note {
-    font-family: 'Lato', sans-serif;
+    font-family: @font-family_4;
   }
 }
 @media only screen and (min-width: 480px) {

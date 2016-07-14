@@ -18,7 +18,7 @@
           <div class="panel-body">
             <ion-item class="row" ng-class="{true: 'none', false: ''}[{{admission.id}} >= 4]" ng-repeat="admission in admissions">
               ​<span class="col">{{admission.id + 1}}</span>
-              <a ng-href="{{admission.src}}" target="_blank" class="col col-75">{{admission.text}}</a>
+              <a ng-href="#/wba/admissions" target="_blank" class="col col-75">{{admission.text}}</a>
             </ion-item>
           </div>
         </div>

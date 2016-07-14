@@ -13,7 +13,7 @@
           <div class="panel-body">
             <ion-list>
               <ion-item ng-repeat="title in section.form" class="item item-text-wrap center">
-                <a href="{{title.src}}" target="_blank" ng-click="openPDF()">{{title.title}}</a>
+                <a href="#/wba/forms/{{section.id}}">{{title.title}}</a>
               </ion-item>
             </ion-list>
           </div>
